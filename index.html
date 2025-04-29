@@ -1,0 +1,3221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <title>Português para Estrangeiros - Unidade 1</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Oculta rolagem horizontal */
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .titulo-programa {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 70px;
+            color: #003974;
+            font-weight: lighter;
+        }
+
+        .titulo-materia {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 133px;
+            color: #003974;
+            font-weight: lighter;
+        }
+
+        .subtitulo-professor {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 59px;
+            color: #0058B4;
+            font-weight: lighter;
+        }
+
+        .titulo-unidade {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 60px;
+        }
+
+        .titulo-saiba-mais {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 70px;
+        }
+        /* Estilização de Bebas Neue FIM */
+
+
+        /* Estilização de Roboto INICIO */
+        .peso-1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 45px;
+        }
+
+        .texto {
+            font-family: 'Roboto', sans-serif;
+            font-size: 35px;
+        }
+
+        .sub-texto {
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+        }
+
+        .titulo-box {
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+        }
+
+        .fonte {
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+        }
+
+        .citacao {
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-style: italic;
+        }
+
+        .referencias {
+            font-family: 'Roboto', sans-serif;
+            font-size: 35px;
+        }
+
+        /* Estilização de Roboto FIM */
+        /* Navbar styles INICIO */
+        .navbar {
+            background-color: #134969;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            position: -webkit-sticky; /* Para navegadores antigos */
+            position: sticky; /* Para manter no topo durante o scroll */
+            top: 0; /* Faz com que a navbar fique no topo */
+            z-index: 10; /* Garante que o menu fique acima de outros elementos */
+            transition: background-color 0.3s ease; /* Transição suave para o efeito */
+        }
+
+        .navbar .logo img {
+            height: 50px;/* Ajuste conforme necessário */
+            width: auto;
+        }
+
+        .navbar .menu-toggle {
+            cursor: pointer;
+            font-size: 1.5em;
+            display: block;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            background-color: #134969;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 220px; /* Aumenta um pouco a largura */
+            max-height: 300px; /* Define um limite de altura */
+            overflow-y: auto; /* Adiciona scroll vertical se necessário */
+            border-radius: 5px;
+            z-index: 10;
+            scrollbar-width: thin; /* Estiliza a barra de rolagem (Firefox) */
+            scrollbar-color: #fff #134969; /* Personaliza a cor */
+        }
+
+        .navbar ul.show {
+            display: flex;
+        }
+
+        .navbar ul li {
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: #133869; /* Cor ao passar o mouse */
+        }
+        .navbar .menu-toggle i:last-child {
+            display: none; /* Esconde o ícone de fechar inicialmente */
+        }
+        /* Para Chrome, Edge e Safari */
+        .navbar ul::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .navbar ul::-webkit-scrollbar-thumb {
+            background-color: #fff;
+            border-radius: 3px;
+        }
+
+        .navbar ul::-webkit-scrollbar-track {
+            background-color: #9f43be;
+        }
+
+         /* Navbar styles FIM */
+
+        /* Titulo styles INICIO */
+        .titulo-intro {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .titulo-intro h1 {
+            margin: 0;
+            padding: 15px;
+        }
+        /* Titulo styles FIM */
+
+        /* Estilo da Capa do Livro INICIO*/
+        .capa-livro {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .capa-livro::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://res.cloudinary.com/di4ria1pf/image/upload/v1744829642/jf8ihsql9tactxny2lhc.png');
+            background-size: cover; /* preenche tudo */
+            background-position: bottom center; /* mostra mais da parte inferior */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 1; /* ou ajuste se quiser efeito */
+            z-index: -1;
+        }
+
+        
+
+        .capa-livro .conteudo-capa {
+            text-align: center;
+            color: white;
+            padding: 20px; /* Espaço interno para o texto */
+        }
+        
+        .capa-livro .titulo-materia {
+            font-size: 80px;
+            font-family: 'Bebas Neue', cursive;
+            margin: 0;
+        }
+
+        .capa-livro .subtitulo-professor {
+            font-size: 40px;
+            font-family: 'Bebas Neue', cursive;
+            margin: 10px 0 0;
+        }
+        @media (max-width: 768px) {
+            .capa-livro::before {
+                background-attachment: scroll; /* remove o parallax */
+                background-position: center center; /* centraliza a imagem */
+            }
+
+            .capa-livro {
+                height: auto; /* deixa o conteúdo definir a altura */
+            }
+
+            .capa-livro .titulo-materia {
+                font-size: 48px;
+            }
+
+            .capa-livro .subtitulo-professor {
+                font-size: 24px;
+            }
+            }
+
+        /* Estilo da Capa do Livro FIM*/
+
+        /* Barra Superior */
+        .barra-superior {
+            background-color: #134969; /* Cor verde escuro */
+            width: 100%;
+            padding: 15px 15px;
+            text-align: center;
+            box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+            overflow-x: hidden; /* Previne rolagem horizontal */
+        }
+
+        .barra-superior .titulo-barra {
+            font-family: 'Bebas Neue', cursive;
+            color: #FFF; /* Cor branca */
+            font-size: 50px;
+            font-weight: lighter;
+            margin: 0;
+        }
+
+        /* Conteúdo da Introdução */
+        .introducao {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            overflow-x: hidden; /* Impede rolagem horizontal */
+            border-bottom: 2px solid #134969;
+        }
+        
+        .introducao .titulo-introducao {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            font-weight: lighter;
+            color: #134969; /* Cor verde */
+            margin: 10px auto 10px auto;
+        }
+
+        .introducao .caixa-texto {
+            width: 100%;
+            background-color: #809dae70; /* Verde mais claro */
+            padding: 20px 0;
+        }
+                /* Conteúdo centralizado dentro da faixa */
+        .introducao .conteudo-centralizado {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Parágrafos da introdução */
+        .introducao .conteudo-centralizado p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 19px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* RESPONSIVIDADE SEÇÕES ACIMA*/
+        /* Capa do Livro - Responsividade */
+        @media (max-width: 768px) {
+            .capa-livro {
+                height: 70vh; /* Reduz a altura da capa */
+            }
+            .capa-livro::before {
+                background-position: center center; /* centraliza melhor no mobile */
+            }
+            .capa-livro .titulo-materia {
+                font-size: 40px; /* Reduz o tamanho do título */
+            }
+
+            .capa-livro .subtitulo-professor {
+                font-size: 24px; /* Reduz o tamanho do subtítulo */
+            }
+            .capa-livro .titulo-programa {
+                font-size: 18px;
+            }
+            .capa-livro .conteudo-capa {
+                padding: 15px; /* Ajusta o padding para telas menores */
+            }
+        }   
+            /* Seção Introdução - Responsividade */
+        @media (max-width: 768px) {
+            .barra-superior {
+                padding: 10px; /* Reduz o padding da barra */
+            }
+
+            .barra-superior .titulo-barra {
+                font-size: 1.8rem; /* Reduz o tamanho do título na barra */
+            }
+
+            .introducao .titulo-introducao {
+                font-size: 2.8rem; /* Reduz o tamanho do título da introdução */
+                margin-top: 20px; /* Ajusta o espaçamento superior */
+            }
+
+            .introducao .caixa-texto {
+                padding: 20px; /* Reduz o padding da caixa de texto */
+                width: 90%; /* Ajusta a largura da caixa */
+            }
+
+            .introducao .caixa-texto p {
+                font-size: 1.2rem; /* Reduz o tamanho do texto */
+                line-height: 1.4;
+                margin-bottom: 10px; /* Ajusta a margem entre os parágrafos */
+            }
+        }
+        /* Responsividade para o título da seção de Programa */
+        @media (max-width: 768px) {
+            .titulo-programa {
+                font-size: 50px; /* Ajuste do tamanho do título */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .titulo-programa {
+                font-size: 35px; /* Ajuste para telas muito pequenas */
+            }
+        }
+        /* Estilo base da seção */
+        .secao1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #b9e5a92c;
+            border-bottom: 3px solid #92d678;
+        }
+
+        /* Imagem de topo */
+        .secao1 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao1 .faixa-verde {
+            width: 100%;
+            background-color: #b9e5a9;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao1 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #FFF; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao1 .titulo-verde {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #b9e5a9; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao1 p {
+            font-size: 19px;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+                 
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao1 .faixa-verde .titulo-secao {
+                font-size: 30px;
+            }
+
+            .secao1 p {
+                font-size: 1rem;
+            }
+            .secao1 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao1 .faixa-verde .titulo-secao {
+                font-size: 24px;
+            }
+
+            .secao1 p {
+                font-size: 0.95rem;
+            }
+        }
+        /* Estilo base da seção */
+        .secao2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #3a96a61c;
+            border-bottom: 3px solid #3a95a6;
+        }
+
+        /* Imagem de topo */
+        .secao2 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao2 .faixa-verde {
+            width: 100%;
+            background-color: #3a95a6;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao2 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #FFF; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao2 .titulo-verde {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #b9e5a9; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao2 p {
+            font-size: 19px;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+                 
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao2 .faixa-verde .titulo-secao {
+                font-size: 30px;
+            }
+
+            .secao2 p {
+                font-size: 1rem;
+            }
+            .secao2 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao2 .faixa-verde .titulo-secao {
+                font-size: 24px;
+            }
+
+            .secao2 p {
+                font-size: 0.95rem;
+            }
+        }
+         /* Estilo base da seção */
+        .secao3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #b9e5a92c;
+            border-bottom: 3px solid #92d678;
+        }
+
+        /* Imagem de topo */
+        .secao3 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao3 .faixa-verde {
+            width: 100%;
+            background-color: #92d678;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao3 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #FFF; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao3 .titulo-verde {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #b9e5a9; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao3 p {
+            font-size: 19px;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+                 
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao3 .faixa-verde .titulo-secao {
+                font-size: 30px;
+            }
+
+            .secao3 p {
+                font-size: 1rem;
+            }
+            .secao3 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao3 .faixa-verde .titulo-secao {
+                font-size: 24px;
+            }
+
+            .secao3 p {
+                font-size: 0.95rem;
+            }
+        }
+         /* Estilo base da seção */
+        .secao4 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #809dae70;
+            border-bottom: 3px solid #134969;
+        }
+
+        /* Imagem de topo */
+        .secao4 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao4 .faixa-verde {
+            width: 100%;
+            background-color: #134969;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao4 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #FFF; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao4 .titulo-verde {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #b9e5a9; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao4 p {
+            font-size: 19px;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+                 
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao4 .faixa-verde .titulo-secao {
+                font-size: 30px;
+            }
+
+            .secao4 p {
+                font-size: 1rem;
+            }
+            .secao4 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao4 .faixa-verde .titulo-secao {
+                font-size: 24px;
+            }
+
+            .secao4 p {
+                font-size: 0.95rem;
+            }
+        }
+        /* Estilo base da seção */
+        .secao5 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #b9e5a92c;
+            border-bottom: 3px solid #92d678;
+        }
+
+        /* Imagem de topo */
+        .secao5 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao5 .faixa-verde {
+            width: 100%;
+            background-color: #b9e5a9;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao5 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #FFF; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao5 .titulo-verde {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #b9e5a9; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao5 p {
+            font-size: 19px;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+                 
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao5 .faixa-verde .titulo-secao {
+                font-size: 30px;
+            }
+
+            .secao5 p {
+                font-size: 1rem;
+            }
+            .secao5 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao5 .faixa-verde .titulo-secao {
+                font-size: 24px;
+            }
+
+            .secao5 p {
+                font-size: 0.95rem;
+            }
+        }
+        /* Estilo base da seção */
+        .secao6 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #3a96a61c;
+            border-bottom: 3px solid #3a95a6;
+        }
+
+        /* Imagem de topo */
+        .secao6 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao6 .faixa-verde {
+            width: 100%;
+            background-color: #3a95a6;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao6 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #FFF; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao6 .titulo-verde {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #b9e5a9; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao6 p {
+            font-size: 19px;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+                 
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao6 .faixa-verde .titulo-secao {
+                font-size: 30px;
+            }
+
+            .secao6 p {
+                font-size: 1rem;
+            }
+            .secao6 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao6 .faixa-verde .titulo-secao {
+                font-size: 24px;
+            }
+
+            .secao6 p {
+                font-size: 0.95rem;
+            }
+        }
+         /* Estilo base da seção */
+        .conclusao {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #b9e5a92c;
+            border-bottom: 3px solid #92d678;
+        }
+
+        /* Imagem de topo */
+        .conclusao .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .conclusao .faixa-verde {
+            width: 100%;
+            background-color: #92d678;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .conclusao .faixa-verde .titulo-secao {
+            font-size: 50px;
+            font-family: 'Bebas Neue', cursive;
+            font-weight: lighter;
+            color: #FFF; /* Cor verde */
+            width: 90%;
+            margin: 10px auto 10px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .conclusao .titulo-verde {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #b9e5a9; /* Cor verde */
+            width: 90%;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .conclusao p {
+            font-size: 19px;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 10px auto;
+            width: 90%;
+            max-width: 800px;
+                 
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .conclusao .faixa-verde .titulo-secao {
+                font-size: 30px;
+            }
+
+            .conclusao p {
+                font-size: 1rem;
+            }
+            .conclusao .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .conclusao .faixa-verde .titulo-secao {
+                font-size: 24px;
+            }
+
+            .conclusao p {
+                font-size: 0.95rem;
+            }
+        }
+
+         /* Estilo base da seção */
+        .referencias {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #809dae70;
+            border-bottom: 3px solid #134969;
+        }
+
+        /* Imagem de topo */
+        .referencias .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .referencias .faixa-verde {
+            width: 100%;
+            background-color: #134969;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .referencias .faixa-verde .titulo-secao {
+            font-size: 50px;
+            font-family: 'Bebas Neue', cursive;
+            font-weight: lighter;
+            color: #FFF; /* Cor verde */
+            width: 90%;
+            margin: 10px auto 10px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .referencias .titulo-verde {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #b9e5a9; /* Cor verde */
+            width: 90%;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .referencias p {
+            font-size: 19px;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 10px auto;
+            width: 90%;
+            max-width: 800px;
+                 
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .referencias .faixa-verde .titulo-secao {
+                font-size: 30px;
+            }
+
+            .referencias p {
+                font-size: 1rem;
+            }
+            .referencias .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .referencias .faixa-verde .titulo-secao {
+                font-size: 24px;
+            }
+
+            .referencias p {
+                font-size: 0.95rem;
+            }
+        }
+
+                /* Título do Slider */
+        .slider-quadrinhos .titulo-slider {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .slider-quadrinhos .titulo-slider .figura {
+            color: #015A42;
+        }
+
+        /* Container do slider */
+        .slider-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid #b9e5a9;
+            overflow: hidden;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        /* Imagens do slider */
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide {
+            display: none;
+            max-width: 100%;
+            max-height: 600px;
+            margin: 0 auto;
+            border-radius: 10px;
+            object-fit: contain;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slide.ativo {
+            display: block;
+        }
+
+        /* Setas */
+        .seta {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            font-size: 30px;
+            color: #015A42;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .seta.esquerda {
+            left: 0;
+        }
+
+        .seta.direita {
+            right: 0;
+        }
+
+            /* Responsivo */
+        @media (max-width: 768px) {
+            .slider-container {
+                padding: 15px;
+            }
+
+            .slide {
+                max-width: 100%;
+                max-height: 350px;
+            }
+
+            .seta {
+                font-size: 24px;
+            }
+
+            .slider-quadrinhos .titulo-slider {
+                font-size: 18px;
+            }
+        }
+                /* Indicadores de slide (bolinhas) */
+        .slider-indicadores {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .slider-indicadores .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 6px;
+            background-color: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .slider-indicadores .dot.ativo {
+            background-color: #015A42;
+        }
+        .fonte-imagem {
+            font-size: 12px !important;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+            max-width: 500px;
+        }
+        .text-italic {
+            font-style: italic;
+        }
+        /* Thumbnail com imagem de fundo e botão play */
+        .video-thumbnail {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            height: 400px;
+            margin: 20px auto;
+            border: 2px solid #b9e5a9;
+            border-radius: 16px;
+            padding: 20px; /* Espaço entre borda e imagem */
+            box-sizing: border-box;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+         /* Camada da imagem de fundo */
+        .video-bg {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            bottom: 30px;
+            background-image: url('https://res.cloudinary.com/di4ria1pf/image/upload/v1745434099/k1hkgcwcv7ydys0dxmzu.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+            overflow: hidden;
+        }       
+        /* Camada de esverdeamento */
+        .video-bg::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(185, 229, 169, 0.4); /* Cor verde com opacidade */
+            z-index: 1;
+        }
+        /* Ícone de play centralizado */
+        .play-icon {
+            z-index: 1;
+            font-size: 90px;
+            color: #fff;
+            background-color: #b9e5a9;
+            border-radius: 25%;
+            width: 150px;
+            height: 125px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .play-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal de vídeo */
+        .video-modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-modal .modal-content {
+            position: relative;
+            background-color: #000;
+            padding: 10px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .video-modal iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .fechar-modal {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 30px;
+            color: white;
+            background: #b9e5a9;
+            border-radius: 50%;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .quadroimg {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto; /* Centraliza horizontalmente */
+            box-sizing: border-box;
+        }
+
+        .quadroimg img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        @media (max-width: 600px) {
+            .quadroimg {
+                width: 90%;
+                padding: 8px;
+            }
+
+            .quadroimg img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .fonte-imagem {
+                width: 90%;
+                font-size: 11px !important;
+            }
+
+            .titulo-quadrov {
+                font-size: 16px;
+                text-align: center;
+                margin-top: 30px;
+            }
+        }
+        .text-italicu{
+            font-style: italic;
+            text-decoration: underline;
+        }
+        /* Título dentro do quadro */
+        .titulo-quadrov {
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            color: #333; /* Verde */
+            margin-top: 50px;
+            font-weight: normal; /* Evita que o título fique em negrito */
+        }
+        .text-greenv{
+            color: #015A42;
+            font-weight: bold;
+        }
+           /* Modal - Fundo escuro ao abrir a imagem */
+        .modal {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Imagem no modal */
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            display: block;
+            margin: auto;
+            border-radius: 8px;
+        }
+
+        /* Botão de fechar */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        /* Acordeon styles */
+        .acordeon-container {
+            margin-top: 20px;
+            width: 90%; /* Ajuste de largura */
+            max-width: 800px; /* Limite máximo */
+        }
+
+        .acordeon {
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .acordeon-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3a95a6;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .acordeon-headerb {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #134969;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .acordeon-headerc {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #b9e5a9;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .acordeon-content {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #3a95a6;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-contentb {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #134969;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-contentc {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #b9e5a9;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-content p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .acordeon-contentb p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .acordeon-contentc p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+            /* Estilo do ícone da seta */
+        .acordeon-icon {
+            font-size: 40px;
+            transition: transform 0.3s ease; /* Para rotação suave */
+        }
+            
+            /* Rotação da seta para cima */
+        .acordeon-header.active .acordeon-icon {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+        /* Rotação da seta para cima */
+        .acordeon-headerb.active .acordeon-icon {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .acordeon-header {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-content {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-content p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+            .acordeon-headerb {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentb {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentb p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+
+            .acordeon-headerc {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentc {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentc p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+        }
+        /* Responsividade para telas menores ainda (480px) */
+        @media (max-width: 480px) {
+            .acordeon-header {
+                font-size: 19px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-content {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-content p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 19px;
+            }
+            .acordeon-headerb {
+                font-size: 19px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentb {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentb p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 19px;
+            }
+
+            .acordeon-headerc {
+                font-size: 19px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentc {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentc p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 19px;
+            }
+        }
+            /* Acordeon styles FIM */
+
+        /* Seção geral */
+        .tabs-section {
+            max-width: 800px;
+            margin: 40px auto;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Cabeçalho das tabs */
+        .tabs-header {
+            display: flex;
+            flex-wrap: wrap; /* permite quebra de linha */
+            justify-content: center;
+            gap: 10px;
+            background-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        /* Botões de cada aba */
+        .tab-btn {
+            background-color: #134969;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            max-width: 90%; /* impede que ultrapasse a tela */
+            word-break: break-word;
+            text-align: center;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        /* Botões de cada aba */
+        .tab-btnb {
+            background-color: #3a95a6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            max-width: 90%; /* impede que ultrapasse a tela */
+            word-break: break-word;
+            text-align: center;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        @media screen and (max-width: 480px) {
+            .tab-btn,
+            .tab-btnb {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+        }
+        .tab-btn:hover {
+            background-color: #1d5b7a;
+        }
+
+        .tab-btnb:hover {
+            background-color: rgba(29, 91, 122, 0.438);
+        }
+
+        .tab-btn.ativo {
+            background-color: #0f3c4e;
+        }
+
+        /* Conteúdo das tabs */
+        .tabs-content {
+            border: 2px solid #134969;
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+            background-color: #b9e5a92c;
+        }
+         /* Conteúdo das tabs */
+        .tabs-contentb {
+            border: 2px solid #3a95a6;
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+            background-color: #3a96a61c;
+        }
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.ativo {
+            display: block;
+        }
+        .slider-texto-container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 2px solid #134969;
+            padding: 20px 30px;
+            box-sizing: border-box;
+            overflow: hidden;
+            background-color: #809dae00;
+            border-radius: 8px;
+            }
+
+        .slider-texto-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slide-texto {
+            display: none;
+            flex-shrink: 0;
+            width: 100%;
+            text-align: center;
+            word-break: keep-all;
+            white-space: normal;
+            
+        }
+
+        .slide-texto.ativo {
+            display: block;
+        }
+
+        .titulo-texto {
+            color: #134969;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+            width: 100%;
+        }
+
+        .conteudo-texto {
+            font-size: 19px !important;
+            color: #333 !important;
+            font-family: 'Roboto', sans-serif !important;
+            width: 100%;
+            margin: 0 auto;
+            word-break: normal;
+            white-space: normal;
+        }
+        .titulo-texto,
+        .conteudo-texto {
+            word-break: break-word;
+            white-space: normal;
+        }
+        .seta-texto {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            font-size: 30px;
+            color: #134969;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .seta-texto.esquerda {
+            left: 0;
+        }
+
+        .seta-texto.direita {
+            right: 0;
+        }
+
+    @media (max-width: 768px) {
+        .titulo-texto {
+            font-size: 20px;
+        }
+
+        .conteudo-texto {
+            font-size: 18px;
+        }
+
+        .seta-texto {
+            font-size: 24px;
+        }
+    }
+        .slider-texto-indicadores {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .dot-texto {
+            height: 12px;
+            width: 12px;
+            margin: 0 6px;
+            background-color: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot-texto.ativo {
+            background-color: #134969;
+        }
+        .container-arcos {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            border-radius: 20px;
+        }
+
+        /* Primeiro arco */
+        .arco1 {
+            position: absolute;
+            top: -8px;  /* sobe um pouco */
+            left: -8px; /* vai um pouco pra esquerda */
+            width: 100%;
+            height: 100%;
+            border: 2px solid #3a95a6;
+            border-radius: 20px;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+
+        /* Segundo arco */
+        .arco2 {
+            position: absolute;
+            top: 8px;   /* desce um pouco */
+            left: 8px;  /* vai um pouco pra direita */
+            width: 100%;
+            height: 100%;
+            border: 2px solid #3a95a6;
+            border-radius: 20px;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+
+        /* Conteúdo */
+        .conteudo-arcos {
+            position: relative;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .conteudo-arcos p {
+            margin: 8px 0;
+        }
+        /* Área da atividade */
+        .atividade-section {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #d6eff4;
+            border: 2px solid #3a95a6;
+            border-radius: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Cabeçalho com título e imagem */
+        .atividade-header {
+            display: flex;
+            justify-content: space-between; /* Agora título na esquerda e imagem na direita */
+            align-items: center;
+            border-bottom: 2px solid #3a95a6;
+            padding-bottom: 5px;
+        }
+
+        .atividade-header h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-weight: normal;
+            color: #3a95a6;
+            font-size: 35px;
+            margin: 0;
+        }
+
+        .atividade-header img {
+            height: 60px;
+        }
+
+        /* Texto abaixo */
+        .atividade-texto {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Imagem clicável centralizada */
+        .atividade-quizz {
+            text-align: center; /* Centraliza o conteúdo interno */
+        }
+
+        .atividade-quizz img {
+            width: 120px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .atividade-quizz img:hover {
+            transform: scale(1.05);
+        }
+        .btn-fechar-quizz {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #3a95a6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 22px;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-fechar-quizz:hover {
+            background-color: #2e7e8e;
+        }
+        @media (max-width: 768px) {
+            .atividade-section {
+                padding: 15px;
+                margin: 20px 10px;
+            }
+
+            .atividade-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                text-align: left;
+            }
+
+            .atividade-header h2 {
+                font-size: 28px;
+                text-align: left;
+            }
+
+            .atividade-header img {
+                height: 50px;
+                align-self: flex-end; /* mantém a imagem à direita se desejar */
+            }
+
+            .atividade-texto {
+                font-size: 15px;
+                text-align: justify;
+            }
+
+            .atividade-quizz img {
+                width: 100px;
+            }
+        }
+        .download-section {
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+            }
+            .download-btn {
+                background-color:  #3a95a6;
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 10px 15px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s ease;
+                font-weight: bold;
+                margin-top: 80px;
+            }
+
+            .download-btn i {
+                font-size: 18px;
+            }
+
+            .download-btn:hover {
+                background-color: #3a96a677;
+            }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745860739/yt9l3oea3uvrdal8omhx.svg" alt="Logo">
+        </div>
+        <div class="menu-toggle">
+            <i class="bx bx-menu"></i>
+            <i class="bx bx-x" style="display: none;"></i> <!-- Ícone de fechar menu -->
+        </div>
+        <ul>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#secao1">Tópico 1</a></li>
+            <li><a href="#secao2">Tópico 2</a></li>
+            <li><a href="#secao3">Tópico 3</a></li>
+            <li><a href="#secao4">Tópico 4</a></li>
+            <li><a href="#secao5">Tópico 5</a></li>
+            <li><a href="#secao6">Tópico 6</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#referencias">Refs Bibliográficas</a></li>
+        </ul>
+    </div>
+    <!-- Capa do Livro -->
+    <section id="capa-livro" class="capa-livro">
+        <div class="borda superior"></div>
+        <div class="conteudo-capa">
+            <h1 class="titulo-programa">NÚCLEO DE RELAÇÕES INTERNACIONAIS</h1>
+            <h1 class="titulo-materia">PORTUGUÊS PARA ESTRANGEIROS</h1>
+            <h2 class="subtitulo-professor">Profª Christian Philip Klein</h2>
+        </div>
+        <div class="borda inferior"></div>
+    </section>
+    <!-- Seção Introdução -->
+    <section id="introducao" class="introducao">
+        <!-- Barra Superior -->
+        <div class="barra-superior">
+            <h1 class="titulo-barra">UNIDADE 1 | O dia a dia no Brasil</h1>
+        </div>
+    
+        <!-- Conteúdo -->
+        <div class="caixa-texto">
+            <div class="conteudo-centralizado">
+                <h1 class="titulo-introducao">INTRODUÇÃO</h1>
+                <p>Olá, estudante!</p>
+                <p>
+                    Sabemos que conhecer uma outra língua e cultura pode ser desafiador, mas nós, aqui da Universidade São
+                    Francisco, temos como objetivo facilitar esse processo e tornar sua experiência mais fluida e
+                    acolhedora.
+                    Nesta primeira unidade, você aprenderá a se apresentar em português e fazer perguntas sobre origem
+                    e cultura. Além disso, abordaremos os números, alfabeto, artigos e advérbios para que você possa se
+                    comunicar de maneira mais efetiva.
+                </p>
+                <p>
+                    Ao longo desta unidade, você terá contato com diálogos que simulam situações reais, como conhecer um
+                    colega na universidade e solicitar informações acadêmicas. A partir dessas interações, você desenvolverá
+                    suas habilidades comunicativas de forma natural e estruturada. Fique tranquilo, pois essas estruturas
+                    serão
+                    apresentadas de maneira gradual, com exemplos e atividades interativas para reforçar o seu aprendizado.
+                    Vamos iniciar nosso estudo?
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="secao1" id="secao1">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1744848303/g7vh0r0sje52zd19k9ww.png"
+            alt="Imagem topo da seção" class="imagem-topo">
+    
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                1. SAUDAÇÕES E DESPEDIDAS
+            </h1>
+        </div>
+        <p>
+            A comunicação é essencial para interagir com outras pessoas e sentir parte de um novo ambiente. No
+            dia a dia, usamos saudações e apresentações para iniciar conversas e conhecer melhor quem está ao
+            nosso redor. Saber cumprimentar alguém e se apresentar corretamente facilita muito a integração na
+            universidade e em qualquer outra situação social.
+        </p>
+        <p>
+            No Brasil, existem diferentes formas de cumprimentar alguém, dependendo do nível de formalidade. Em
+            situações mais informais, é comum ouvir "Oi" ou "Olá", enquanto em ambientes acadêmicos ou profissionais,
+            expressões como "Bom dia", "Boa tarde" e "Boa noite" são mais adequadas. Além da saudação oral, o
+            povo brasileiro é muito afetivo. Formalmente, podemos cumprimentamos com um aperto de mão. Quando
+            o grau de intimidade aumenta, os brasileiros abraçam e podem até mesmo dar um leve beijo no rosto.
+        </p>
+        <p>
+            Aprender a se comunicar de forma clara e educada ajuda na adaptação a um novo país e cultura. Quando
+            conseguimos nos apresentar bem, criamos boas impressões e construímos relações mais facilmente.
+            Observe o quadrinho a seguir, com um exemplo de uma boa comunicação.
+        </p>
+        <!-- Slider de Quadrinhos -->
+        <section class="slider-quadrinhos">
+            <h2 class="titulo-slider">
+                <span class="figura">Figura 1.</span> Diálogo de apresentação de primeiro contato
+            </h2>
+        
+            <div class="slider-container">
+                <button class="seta esquerda" onclick="mudarSlide(-1)">&#10094;</button>
+        
+                <div class="slider">
+                    <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745362149/aigcn4biy7dhm1c6fdfm.png"
+                        alt="Quadrinho 1" class="slide ativo">
+                    <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745362148/qixtjkxgztztc99kmizk.png"
+                        alt="Quadrinho 2" class="slide">
+                    <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745362220/feyztcfxsbvp7idorrh8.png"
+                        alt="Quadrinho 3" class="slide">
+                </div>
+        
+                <button class="seta direita" onclick="mudarSlide(1)">&#10095;</button>
+            </div>
+        
+            <!-- Agora os dots ficam aqui fora -->
+            <div class="slider-indicadores">
+                <span class="dot" onclick="irParaSlide(0)"></span>
+                <span class="dot" onclick="irParaSlide(1)"></span>
+                <span class="dot" onclick="irParaSlide(2)"></span>
+            </div>
+        
+            <p class="fonte-imagem">
+                <span class="text-italic"><strong>Fonte:</strong> USF, 2025.</span>
+            </p>
+        </section>
+        <!-- Bloco de vídeo com imagem de fundo -->
+        <div class="video-thumbnail" data-video="https://www.youtube.com/embed/ScMzIvxBSi4">
+            <div class="video-bg"></div>
+            <div class="play-icon">&#9658;</div>
+        </div>
+        
+        <!-- Modal de Vídeo -->
+        <div id="videoModal" class="video-modal">
+            <div class="modal-content">
+                <span class="fechar-modal">&times;</span>
+                <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <section class="secao1">
+        <h1 class="titulo-verde">
+            1.1. NÚMEROS
+        </h1>
+        <p>
+            Os números estão presentes em diversas situações do nosso cotidiano. Como você pode observar na
+            Figura 01, eles são utilizados, por exemplo, para indicar um número de telefone. Além disso, usamos os
+            números para anotar um endereço, ao verificar documentos como a carteira de identidade, a carteira de
+            motorista ou o passaporte, ao ficar numa fila de espera em um banco e até mesmo ao pedir uma pizza
+            (ao escolher ½ calabresa e ½ mussarela).
+        </p>
+        <p>
+            Na língua portuguesa, os números pertencem à classe dos numerais, e eles são palavras variáveis que
+            indicam um número exato ou a posição que tal coisa ocupa numa série. Os numerais podem ser classificados
+            em quatro categorias principais, como vemos a seguir:
+        </p>
+        <h2 class="titulo-quadrov"><span class="text-greenv">Tabela 1.</span> Tipos de Numerais</h2>
+        <div class="quadroimg">
+            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745482083/pzhagufipkyg0rfwsixn.png"
+                alt="Imagem vertical" onclick="openModal(this)">
+        </div>
+        <!-- Modal para exibir a imagem ampliada -->
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+        <p class="fonte-imagem">
+            <span class="text-italic"><strong>Fonte:</strong> Adaptada de Toda a Matéria. Disponível em: https://www.todamateria.com.br/. Acesso em: 03 abr. 2025.</span>
+        </p>
+    </section>
+    <section class="secao2" id="secao2">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745482633/lzh6tivsuwgnneylpzvp.png"
+            alt="Imagem topo da seção" class="imagem-topo">
+        
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                2. INFORMAÇÕES GERAIS
+            </h1>
+        </div>
+        <p>
+            Ao ingressar na faculdade, seja como estudante estrangeiro ou não, é importante conhecer algumas
+            informações básicas para facilitar a adaptação ao novo ambiente acadêmico e a cultura universitária.
+            Essas informações ajudam na sua ambientação, podem evitar dificuldades iniciais e a aproveitar melhor
+            os recursos disponíveis.
+        </p>
+        <p>
+            Podemos destacar alguns aspectos importantes que podem auxiliar nesse processo.
+        </p>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-header">
+                    INFRAESTRUTURA
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-content">
+                    <p>
+                        Conhecer a localização de espaços essenciais da universidade, como biblioteca,
+                        banheiros, refeitórios e salas de estudo.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-header">
+                    NORMAS E REGULAMENTOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-content">
+                    <p>
+                        Compreender as principais regras da instituição para evitar problemas com prazos,
+                        penalidades e procedimentos administrativos.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-header">
+                    CULTURA E VIDA SOCIAL
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-content">
+                    <p>
+                        Estar ciente de festividades, costumes locais e eventos acadêmicos que promovem a
+                        integração entre os estudantes.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Quarto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-header">
+                    REDE DE APOIO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-content">
+                    <p>
+                        Explorar os serviços oferecidos pela faculdade, como orientação estudantil, grupos
+                        acadêmicos e programas de suporte.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quinto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-header">
+                    SERVIÇOS EXTERNOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-content">
+                    <p>
+                        Obter informações sobre transporte público, segurança, atendimento médico e outras
+                        facilidades da cidade e região.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p>
+            Esses aspectos podem contribuir para uma experiência acadêmica mais tranquila e enriquecedora.
+        </p>
+    </section>
+    <section class="secao3" id="secao3">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745524189/vm6embgebhgp2mhck5qn.png"
+            alt="Imagem topo da seção" class="imagem-topo">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                3. PEDIR INFORMAÇÕES
+            </h1>
+        </div>
+        <p>
+            Um dos momentos mais importantes dentro da universidade é a solicitação de informações sobre disciplinas,
+            horários de aula e localização de setores administrativos. Para estudantes estrangeiros, essa experiência
+            pode ser ainda mais desafiadora, pois envolve a adaptação a um novo idioma e cultura. A comunicação
+            nesse contexto, torna-se essencial para garantir que os alunos compreendam e aproveitem os serviços
+            oferecidos pela instituição.
+        </p>
+        <!-- Slider de Quadrinhos -->
+        <section class="slider-quadrinhos">
+            <h2 class="titulo-slider">
+                <span class="figura">Figura 2.</span> Diálogo de apresentação de primeiro contato
+            </h2>
+        
+            <div class="slider-container">
+                <button class="seta esquerda" onclick="mudarSlide(-1)">&#10094;</button>
+        
+                <div class="slider">
+                    <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745524720/ybuzvnhi61hv75uas0ew.png"
+                        alt="Quadrinho 3" class="slide ativo">
+                    <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745524720/guclsgbmzg9ihatxgv0s.png"
+                        alt="Quadrinho 4" class="slide">
+                    <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745524721/q3ajbozwvudvyn0kh3wr.png"
+                        alt="Quadrinho 5" class="slide">
+                </div>
+        
+                <button class="seta direita" onclick="mudarSlide(1)">&#10095;</button>
+            </div>
+        
+            <!-- Agora os dots ficam aqui fora -->
+            <div class="slider-indicadores">
+                <span class="dot" onclick="irParaSlide(0)"></span>
+                <span class="dot" onclick="irParaSlide(1)"></span>
+                <span class="dot" onclick="irParaSlide(2)"></span>
+            </div>
+        
+            <p class="fonte-imagem">
+                <span class="text-italic"><strong>Fonte:</strong> USF, 2025.</span>
+            </p>
+        </section>
+        <p>
+            Podemos perceber, no diálogo anterior, como algumas palavras muito semelhantes podem ter significados
+            distintos e desempenhar papéis diferentes na comunicação. Um exemplo disso são os termos "quando" e
+            "quanto" no idioma português. Vamos abordar esse tema de forma mais aprofundada no capítulo 05, mas,
+            de forma breve, podemos dizer que “Quando” é uma palavra que está atrelada ao uso de um advérbio
+            sugerindo a ideia de tempo, dia, datas. Um exemplo de uso seria: “Quando o meu carro fica pronto?”. Já à
+            palavra “quanto” geralmente é aplicada a expressão usada para descobrir sobre a intensidade, quantidade
+            ou o preço de alguma coisa. Por exemplo: “Quanto custa este livro?”.
+        </p>
+        <p>
+            Ainda sobre a Figura 2, podemos identificar diversas palavras que nomeiam pessoas, lugares e objetos,
+            como “aluno”, “campus”, “Maria José”, “aulas” etc. Essas palavras são chamadas de substantivos. Os
+            substantivos são termos que nomeiam seres, objetos, sentimentos, ideias, planetas, entre outros elementos
+            do universo. Eles são essenciais para a comunicação, pois permitem que nos refiramos ao mundo ao
+            nosso redor de maneira clara e objetiva. “É por meio dele que conseguimos estabelecer relações e dar
+            nome aos elementos do mundo."
+        </p>
+        <p>
+            Os substantivos podem sofrer variações, como mostrado a seguir:
+        </p>
+        <section class="tabs-section" id="grupo-tabs-a">
+            <div class="tabs-header">
+                <button class="tab-btn ativo" data-target="numero">NÚMERO</button>
+                <button class="tab-btn" data-target="grau">GRAU</button>
+                <button class="tab-btn" data-target="genero">GÊNERO</button>
+            </div>
+        
+            <div class="tabs-content">
+                <div id="numero" class="tab-content ativo">
+                    <p><strong>▸</strong> Singular (flor)</p>
+                    <p><strong>▸</strong> Plural (flores)</p>
+                </div>
+                <div id="grau" class="tab-content">
+                    <p><strong>▸</strong> Aumentativo (casarão)</p>
+                    <p><strong>▸</strong> Diminutivo (casinha)</p>
+                </div>
+                <div id="genero" class="tab-content">
+                    <p><strong>▸</strong> Biforme - caracterizado por duas formas para apresentar cada gênero, como por exemplo
+                        jogador e jogadora ou enfermeiro e enfermeira.</p>
+                    <p><strong>▸</strong> Uniforme - quando um termo especifica os dois gêneros, como estudante; subclasses:
+                        epiceno (animais - tartaruga), sobrecomum (pessoas - jovem) e comum (dentista - identificado pelo
+                        artigo).</p>
+                </div>
+            </div>
+        </section>
+        <p>
+            Além disso, alguns substantivos apresentam gênero fixo independentemente da forma, como por exemplo
+            os substantivos de origem grega com terminações de palavras em "ema" e "oma" são classificados como
+            masculinos, mesmo com palavras que terminam em “a” por exemplo: o teorema, o poema. De acordo
+            com o site Toda Matéria, existem substantivos conhecidos como de “gênero duvidoso ou incerto”, que
+            podem ser usados tanto no masculino quanto no feminino sem alterar seu significado. Um exemplo é “o
+            personagem” e “a personagem”. Além disso, existem substantivos cujo sentido muda dependendo do
+            gênero utilizado, como em “o capital”, que se refere a dinheiro ou recursos financeiros, e “a capital”, usada
+            para designar a cidade principal de um estado ou país.
+        </p>
+        <p>
+            O vídeo a seguir complementa o que você estudou até aqui. Ele vai te ajudar a reforçar o conteúdo de
+            forma mais visual e contextualizada. Vamos assistir?
+        </p>
+        <!-- Bloco de vídeo com imagem de fundo -->
+        <div class="video-thumbnail" data-video="https://www.youtube.com/embed/ScMzIvxBSi4">
+            <div class="video-bg"></div>
+            <div class="play-icon">&#9658;</div>
+        </div>
+        
+        <!-- Modal de Vídeo -->
+        <div id="videoModal" class="video-modal">
+            <div class="modal-content">
+                <span class="fechar-modal">&times;</span>
+                <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <section class="secao4" id="secao4">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745601513/wglkd0x3l2uasackwlxn.png"
+            alt="Imagem topo da seção" class="imagem-topo">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                4. SOLETRAÇÃO E O ALFABETO
+            </h1>
+        </div>
+        <p>
+            Durante a conversa entre Sebastian e Maria José, houve um momento em que o estudante precisou
+            soletrar seu sobrenome. Geralmente soletramos uma palavra quando não entendemos direito como ela é
+            escrita ou quando não ouvimos direito seu significado. Quando estamos soletrando um sobrenome, como
+            mostrado no diálogo anterior “M-ü-l-l-e-r”, utilizamos o alfabeto para mostrar como a palavra dita é escrita.
+            O alfabeto é um conjunto de caracteres, chamados letras, que quando juntamos formam as palavras.
+        </p>
+        <p>
+            De acordo com o site Norma Culta (2025), o alfabeto da língua portuguesa deriva do sistema latino,
+            também conhecido como alfabeto romano, amplamente empregado na escrita em diversas línguas ao
+            redor do mundo. Ele é composto por vinte e seis letras, que podem ser apresentadas de duas maneiras
+            diferentes: maiúsculas e minúsculas.
+        </p>
+        <section class="slider-texto-container" data-slider-id="1">
+            <div class="slider-texto-wrapper">
+                <div class="slide-texto ativo">
+                    <h3 class="titulo-texto">Minúscula</h3>
+                    <p class="conteudo-texto">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+                </div>
+                <div class="slide-texto">
+                    <h3 class="titulo-texto">Maiúscula</h3>
+                    <p class="conteudo-texto">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+                </div>
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores">
+                <span class="dot-texto" onclick="irParaSlideTexto(this, 0)"></span>
+                <span class="dot-texto" onclick="irParaSlideTexto(this, 1)"></span>
+            </div>
+        </section>
+        <p>
+            Tradicionalmente, o alfabeto português é composto por cinco vogais e dezoito consoantes. Porém, com a
+            incorporação das letras “k”, “y”, e “w”, houve mudanças na forma como essas categorias são organizadas.
+            A letra “k” é classificada como consoante, o “y” é uma vogal, e o “w” pode ser considerado vogal ou
+            consoante, dependendo de como é pronunciado na palavra. Por exemplo, em “Wilson”, o “w” possui som
+            de vogal “uilson”.
+        </p>
+        <section class="slider-texto-container" data-slider-id="2">
+            <div class="slider-texto-wrapper">
+                <div class="slide-texto ativo">
+                    <h3 class="titulo-texto">Vogais</h3>
+                    <p class="conteudo-texto">a e i o u y w</p>
+                </div>
+                <div class="slide-texto">
+                    <h3 class="titulo-texto">Consoantes</h3>
+                    <p class="conteudo-texto">b c d f g h j k l m n p q r s t v w x z</p>
+                </div>
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores">
+                <span class="dot-texto" onclick="irParaSlideTexto(this, 0)"></span>
+                <span class="dot-texto" onclick="irParaSlideTexto(this, 1)"></span>
+            </div>
+        </section>
+        <p>
+            A seguir, você pode verificar um quadro contendo as letras do alfabeto e sua respectiva pronúncia em
+            português, facilitando o aprendizado e a familiarização com os sons da língua.
+        </p>
+        <h2 class="titulo-quadrov"><span class="text-greenv">Quadro 1.</span> Letras e seus sons em português</h2>
+        <div class="quadroimg">
+            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745609709/v6tzo7tgqawod87c3q5g.png"
+                alt="Imagem vertical" onclick="openModal(this)">
+        </div>
+        <!-- Modal para exibir a imagem ampliada -->
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+        <p class="fonte-imagem">
+            <span class="text-italic"><strong>Fonte:</strong> Elaborado pelo autor.</span>
+        </p>
+        <p>
+            Desde o Acordo Ortográfico de 2009 (tornado obrigatório em 2016), as letras “K”, “W” e “Y” passaram a
+            fazer parte oficial do alfabeto português. Suas inclusões refletem o caráter global da língua portuguesa
+            ao reforçar as suas capacidades de incorporar palavras e influências de outras culturas. Dessa forma,
+            o alfabeto passou de 23 para 26 letras e são importantes para preservar a grafia de nomes de origem
+            estrangeira e siglas e, também, facilitar a adaptação de novos termos oriundos de outras culturas. Podemos
+            evidenciar, no nosso dia a dia, as novas letras em palavras como “watt” e “Yamaha”. A seguir temos alguns
+            exemplos da utilização das letras “K”, “W” e “Y”.
+
+        </p>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    NOMES PRÓPRIOS ESTRANGEIROS DE PESSOAS E SEUS DERIVADOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        <strong>▸</strong> Darwin e darwinismo;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Kant e kantismo;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Newton e newtoniano;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Taylor e taylorista;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Shakespeare e shakesperiano.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    NOMES PRÓPRIOS ESTRANGEIROS DE LUGARES E SEUS DERIVADOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        <strong>▸</strong> Malawi e malawiano;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Kuwait e kuwaitiano;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Yorkshire e yorkshiriano;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Washington e washingtoniano.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    SIGLAS, SÍMBOLOS, UNIDADES DE MEDIDA E UNIDADES MONETÁRIAS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        <strong>▸</strong> km (quilômetro);
+                    </p>
+                    <p>
+                        <strong>▸</strong> kg (quilograma);
+                    </p>
+                    <p>
+                        <strong>▸</strong> W (Watt);
+                    </p>
+                    <p>
+                        <strong>▸</strong> K (potássio);
+                    </p>
+                    <p>
+                        <strong>▸</strong> yd (jarda).
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Quarto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    ESTRANGEIRISMOS DE USO FREQUENTE
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        <strong>▸</strong> download
+                    </p>
+                    <p>
+                        <strong>▸</strong> software;
+                    </p>
+                    <p>
+                        <strong>▸</strong> show;
+                    </p>
+                    <p>
+                        <strong>▸</strong> windsurf;
+                    </p>
+                    <p>
+                        <strong>▸</strong> web;
+                    </p>
+                    <p>
+                        <strong>▸</strong> playground;
+                    </p>
+                    <p>
+                        <strong>▸</strong> playboy;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Whisky;
+                    </p>
+                    <p>
+                        <strong>▸</strong> kit.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p class="fonte-imagem">
+            <span class="text-italic"><strong>Fonte:</strong> Adaptado de https://www.normaculta.com.br/alfabeto/. Acesso em: 04 abr. 2025.</span>
+        </p>
+        <p>
+            O “ç” (cê-cedilha) não é considerado uma letra do alfabeto, mas sim a junção da letra “c” com um sinal
+            diacrítico (a cedilha), tornando-se assim uma variante da letra “c”. Um sinal diacrítico é um pequeno
+            símbolo ou marca gráfica adicionada para modificar ou especificar sua pronúncia ou função dentro de
+            uma palavra. Ou seja, “a cobrinha” abaixo da letra “c” tem como função atribuir um novo valor fonético a
+            essa letra, alterando a sua pronúncia habitual.
+        </p>
+        <p>
+            Na língua portuguesa temos algumas regras para a utilização do “ç”. É exclusivamente usada antes das
+            vogais “a”, “o” e “u” para indicar o som de /s/ como em “caça” ou “açougue”. Não utilizamos “ç” no início
+            das palavras e não usamos o cedilha antes das vogais “i” e “e”, nesses casos usamos apenas o “c”. O
+            grupo silábico fica ça, ce, ci, ço, çu (sendo lido como sa, se, si, so, su).
+        </p>
+    </section>
+    <section class="secao5" id="secao5">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1744848303/g7vh0r0sje52zd19k9ww.png"
+            alt="Imagem topo da seção" class="imagem-topo">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                5. ADVÉRBIOS
+            </h1>
+        </div>
+        <p>
+            Quando estamos aprendendo uma língua nova, perguntas “como?”, “onde?” ou “quando?” aparecem
+            com frequência. Para responder essas perguntas utilizamos os advérbios, que são palavras essenciais
+            para descrever melhor uma ação, um estado ou até mesmo outra palavra. Podemos considerá-los como
+            “palavras mágicas”, pois nos ajudam a dar mais precisão ao discurso.
+        </p>
+        <p>
+            O advérbio é uma palavra utilizada para alterar ou qualificar um verbo, um adjetivo ou até mesmo outro
+            advérbio. Ele fornece informações adicionais ou uma circunstância como modo, lugar, tempo, intensidade,
+            negação, dúvida ou afirmação. Diferente dos adjetivos, os advérbios não concordam em gênero ou número
+            com outras palavras. Por exemplo, o advérbio “rapidamente” permanece inalterado tanto para a frase
+            “eles trabalham rapidamente” quanto para a frase “ela trabalha rapidamente”.
+        </p>
+        <p>
+            Para facilitar a sua compreensão, a seguir será mostrado exemplos de advérbios em frases, bem como
+            uma lista com os mais comuns advérbios.
+        </p>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADVÉRBIOS DE MODO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Explicam <strong>“como”</strong> algo acontece
+                    </p>
+                    <p>
+                        Exemplo: Ela correu <strong>rapidamente.</strong>
+                    </p>
+                    <p>
+                        Advérbios mais comuns: assim, ao léu, às claras, às pressas, à toa, à vontade, bem, com
+                        rancor, debalde, de cócoras, de cor, de mansinho, depressa, devagar, em silêncio, face
+                        a face, frente a frente, mal, melhor, pior, sem medo.
+                    </p>
+                    <p>
+                        Acresce à lista a maior parte das palavras terminadas em -mente: alegremente,
+                        bondosamente, calmamente, discretamente, elegantemente.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADVÉRBIOS DE LUGAR
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Indicam <strong>“onde”</strong>
+                    </p>
+                    <p>
+                        Exemplo: Ela está <strong>aqui.</strong>
+                    </p>
+                    <p>
+                        Advérbios mais comuns: abaixo, acima, acolá, adiante, à direita, à esquerda, aí, além,
+                        algures, ali, ao lado, aquém, aqui, atrás, através, cá, de cima, de fora, defronte, dentro,
+                        detrás, em cima, fora, lá, longe, onde, perto, por fora.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADVÉRBIOS DE TEMPO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Dizem <strong>“quando”</strong>
+                    </p>
+                    <p>
+                        Exemplo: Nós viajaremos <strong>amanhã.</strong>
+                    </p>
+                    <p>
+                        Advérbios mais comuns: ainda, agora, amanhã, à noite, anteontem, antes, à tarde, às
+                        vezes, atualmente, breve, cedo, depois, de manhã, de repente, de vez em quando, hoje,
+                        hoje em dia, já, jamais, logo, nunca, ontem, ora, outrora, quando, sempre, tarde.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Quarto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADVÉRBIOS DE INTENSIDADE
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Mostram <strong>“o quanto”</strong>
+                    </p>
+                    <p>
+                        Exemplo: Eu gosto <strong>muito</strong> de café.
+                    </p>
+                    <p>
+                        Advérbios mais comuns: apenas, assaz, bastante, bem, demais, de pouco, de todo,
+                        deveras, mais, mal, menos, muito, pouco, quanto, quão, quase, tanto, tão.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quinto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADVÉRBIO DE AFIRMAÇÃO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Indicam <strong>certeza</strong> ou confirmação
+                    </p>
+                    <p>
+                        Exemplo: <strong>Sim</strong>, eu aceito.
+                    </p>
+                    <p>
+                        Advérbios mais comuns: certamente, com certeza, decerto, efetivamente, por certo,
+                        realmente, seguramente, sem dúvida, sim.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quinto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADVÉRBIO DE NEGAÇÃO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        <strong>Negam</strong> algo ou indicam que algo não é verdadeiro
+                    </p>
+                    <p>
+                        Exemplo: Ela <strong>não</strong> quer sair.
+                    </p>
+                    <p>
+                        Advérbios mais comuns: de jeito nenhum, de maneira alguma, de modo algum, não,
+                        tampouco.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quinto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADVÉRBIO DE DÚVIDA
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Expressam incerteza ou possibilidade
+                    </p>
+                    <p>
+                        Exemplo: <strong>Talvez</strong> eu vá ao cinema.
+                    </p>
+                    <p>
+                        Advérbios mais comuns: acaso, eventualmente, porventura, possivelmente, provavelmente,
+                        quiçá, talvez.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quinto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADVÉRBIO DE ORDEM
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Indicam a sequência ou posição de algo
+                    </p>
+                    <p>
+                        Exemplo: <strong>Primeiramente</strong>, organize os papéis.
+                    </p>
+                    <p>
+                        Advérbios mais comuns: depois, primeiramente, ultimamente.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quinto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADVÉRBIO DE EXCLUSÃO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Indicam exclusão ou restrição de algo
+                    </p>
+                    <p>
+                        <span class="text-italic">Exemplo</span>: <strong>Apenas</strong> ele conseguiu terminar a prova.
+                    </p>
+                    <p>
+                        Advérbios mais comuns: apenas, salvo, senão, só, somente.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quinto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADVÉRBIO DE DESIGNAÇÃO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Apontam ou destacam algo específico
+                    </p>
+                    <p>
+                        Exemplo: <strong>Eis</strong> a solução para o problema.
+                    </p>
+                    <p>
+                        Advérbios mais comuns: eis
+                    </p>
+                </div>
+            </div>
+
+            <!-- Quinto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    ADVÉRBIOS INTERROGATIVOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        São usadas em perguntas diretas ou indiretas para buscar informações
+                    </p>
+                    <p>
+                        Exemplo: <strong>Onde</strong> você mora?
+                    </p>
+                    <p>
+                        Advérbios mais comuns: como, onde, aonde, donde, por que, quando
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p class="fonte-imagem">
+            <span class="text-italic"><strong>Fonte:</strong> Adaptado de https://www.todamateria.com.br/classificacao-dos-adverbios/. Acesso em: 04 abr. 2025.</span>
+        </p>
+    </section>
+    <section class="secao6" id="secao6">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745482633/lzh6tivsuwgnneylpzvp.png"
+            alt="Imagem topo da seção" class="imagem-topo">
+        
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                6. ARTIGO
+            </h1>
+        </div>
+        <p>
+            Para distinguir se estamos falando de algo específico ou algo em geral utilizamos pequenas palavras
+            conhecidas como artigos. Os artigos sempre acompanham os substantivos, como por exemplo:
+        </p>
+        <div class="container-arcos">
+            <div class="arco arco1"></div>
+            <div class="arco arco2"></div>
+        
+            <div class="conteudo-arcos">
+                <p>“Eu comprei <strong>o</strong> sapato.” (um sapato específico)</p>
+                <p>“Eu comprei <strong>um</strong> sapato.” (qualquer sapato, sem especificar)</p>
+            </div>
+        </div>
+        <p>
+            Os artigos podem ser definidos e indefinidos. Vamos entender melhor como isso funciona.
+        </p>
+        <section class="tabs-section" id="grupo-tabs-b">
+            <div class="tabs-header">
+                <button class="tab-btnb ativo" data-target="artigodef">ARTIGO DEFINIDO</button>
+                <button class="tab-btnb" data-target="artigoind">ARTIGO INDEFINIDO</button>
+            </div>
+        
+            <div class="tabs-contentb">
+                <div id="artigodef" class="tab-content ativo">
+                    <p>Os artigos definidos <strong>(o, a, os, as)</strong> definem ou individualizam algo específico, de forma
+                        precisa, os substantivos, que podem ser uma pessoa, objeto ou lugar.</p>
+                    <p>Exemplo:</p>
+                    <p><strong>▸ O cachorro</strong> está latindo. (um cachorro específico)</p>
+                    <p><strong>▸ As chaves</strong> estão na mesa. (chaves já conhecidas no contexto)</p>
+                </div>
+                <div id="artigoind" class="tab-content">
+                    <p>Os artigos indefinidos (um, uma, uns, umas) definem algo genérico.</p>
+                    <p>Exemplo:</p>
+                    <p><strong>▸ Um cachorro</strong> está latindo. (não sabemos qual cachorro)</p>
+                    <p><strong>▸ Umas chaves</strong> estavam na mesa. (chaves quaisquer)</p>
+                </div>
+            </div>
+        </section>
+        <p>
+            Tanto artigos definidos como indefinidos concordam em gênero (masculino ou feminino) e número (singular
+            ou plural) com o substantivo que o acompanha. O quadro abaixo resume essa relação:
+        </p>
+        <h2 class="titulo-quadrov"><span class="text-greenv">Quadro 2.</span> Artigos Definidos e Indefinidos</h2>
+        <div class="quadroimg">
+            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745937921/wcuw525fm532msrk1jkt.png"
+                alt="Imagem vertical" onclick="openModal(this)">
+        </div>
+        <!-- Modal para exibir a imagem ampliada -->
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+        <p class="fonte-imagem">
+            <span class="text-italic"><strong>Fonte:</strong> Elaborado pelo autor.</span>
+        </p>
+        <p>
+            A principal diferença entre os artigos definidos e indefinidos está no nível de especificidade. Quando
+            utilizamos artigos definidos, estamos nos referindo a algo que já é conhecido no contexto da conversa ou
+            da escrita. Por exemplo, usamos expressões como “o garoto”, “a jaqueta”, “os amigos” e “as meninas”.
+            Dessa forma, percebe-se que o artigo definido tem a função de especificar o substantivo, indicando que
+            ele já é conhecido ou identificado pelo emissor (quem fala ou escreve) e pelo receptor (quem escuta ou
+            lê), seja por ter sido mencionado antes ou por estar implícito no contexto.
+        </p>
+        <p>
+            Por outro lado, os artigos indefinidos generalizam, sem especificar. Isso pode ser visto nas expressões
+            <strong>um gato, uma bolsa, uns amigos</strong> e <strong>umas ideias</strong>, em que não há uma determinação exata sobre quais
+            são esses objetos ou pessoas.
+        </p>
+        <section class="atividade-section">
+            <div class="atividade-header">
+                <h2>AGORA É SUA VEZ!</h2>
+                <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745869736/jyzm19p9bgggekjdrgnz.png"
+                    alt="Ícone título">
+            </div>
+        
+            <p class="atividade-texto">
+                Aprender uma nova língua é um processo, e praticar faz toda a diferença. Que tal reservar um tempinho para
+                exercitar o que estudamos até agora? Use os exercícios como uma forma de revisar e se familiarizar ainda mais
+                com o conteúdo. Vamos nessa?
+            </p>
+        
+            <div class="atividade-quizz">
+                <a href="#" onclick="abrirQuizz(event)">
+                    <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745869741/r1sc3oyzzu1ca5mqiud4.png"
+                        alt="Imagem para abrir o quiz">
+                </a>
+            </div>
+        
+            <div id="iframe-container" style="display: none; margin-top: 20px; position: relative;">
+                <!-- Botão de fechar -->
+                <button onclick="fecharQuizz()" class="btn-fechar-quizz">&times;</button>
+            
+                <!-- Iframe do Genially -->
+                <iframe id="quizz-iframe" src="" width="100%" height="500px"
+                    style="border: 2px solid #3a95a6; border-radius: 10px;"></iframe>
+            </div>
+        </section>
+    </section>
+    <section class="conclusao" id="conclusao">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745524189/vm6embgebhgp2mhck5qn.png"
+            alt="Imagem topo da seção" class="imagem-topo">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                CONCLUSÃO
+            </h1>
+        </div>
+        <p>
+            Nesta primeira unidade, exploramos elementos essenciais para a comunicação em português, incluindo
+            aspectos gramaticais e situações do cotidiano acadêmico. Identificamos o alfabeto e suas pronúncias,
+            aprendemos a nos apresentar e falar sobre nossa origem e contexto cultural, além de trabalharmos com
+            os números em português.
+        </p>
+        <p>
+            Também aprofundamos o uso correto dos artigos definidos e indefinidos, a distinção entre "quanto" e
+            "quando", o papel dos advérbios e a formação dos substantivos e gêneros dos nomes. Para reforçar a prática
+            da língua, analisamos dois diálogos fundamentais para o contexto acadêmico, bem como expressões de
+            polidez, essenciais para a comunicação eficaz no ambiente universitário brasileiro.
+        </p>
+        <p>
+            A compreensão desses elementos é um passo importante para desenvolver habilidades linguísticas mais
+            seguras e naturais. Continue praticando e explorando o português no seu dia a dia, pois quanto mais
+            familiaridade com a língua, mais confiante será a sua comunicação!
+        </p>
+        <div id="download" class="download-section">
+            <a href="" class="download-btn">
+                Baixar PDF <i class="fas fa-download"></i> <!-- Ícone de download -->
+            </a>
+        </div>
+    </section>
+    <section class="referencias" id="referencias">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745601513/wglkd0x3l2uasackwlxn.png"
+            alt="Imagem topo da seção" class="imagem-topo">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                REFERÊNCIAS
+            </h1>
+        </div>
+        <p>
+            AZEREDO, José Carlos de. <strong>Gramática Houaiss da Língua Portuguesa</strong>. 2. ed. São Paulo: Publifolha,
+            2008.
+        </p>
+        <p>
+            CUNHA, Celso; CINTRA, Lindley. <strong>Nova gramática do português contemporâneo</strong>. 3. ed. Rio de Janeiro:
+            Lexikon, 2007.
+        </p>
+        <p>
+            DIANA, Daniela. Artigo definido e indefinido. <strong>Toda Matéria</strong>, [Online], [s. d.]. Língua Portuguesa. Disponível
+            em: https://www.todamateria.com.br/artigo-definido-e-indefinido/. Acesso em: 13 fev. 2025.
+        </p>
+        <p>
+            FERNANDES, Márcia. Alfabeto oficial da língua portuguesa. <strong>Toda Matéria</strong>, [Online], [s. d.]. Língua
+            Portuguesa. Disponível em: https://www.todamateria.com.br/alfabeto/. Acesso em: 13 fev. 2025.
+        </p>
+        <p>
+            FERNANDES, Márcia. Classificação dos advérbios. <strong>Toda Matéria</strong>, [Online]. [s. d.]. Língua Portuguesa.
+            Disponível em: https://www.todamateria.com.br/classificacao-dos-adverbios/. Acesso em: 13 fev. 2025.
+        </p>
+        <p>
+            FERNANDES, Márcia. Numeral. <strong>Toda Matéria</strong>, [Online], [s. d.]. Língua Portuguesa. Disponível em: https://
+            www.todamateria.com.br/numeral/. Acesso em: 13 fev. 2025.
+        </p>
+        <p>
+            FERNANDES, Márcia. Substantivos <strong>Toda Matéria</strong>, [Online], [s. d.]. Língua Portuguesa. Disponível em:
+            https://www.todamateria.com.br/substantivos/. Acesso em: 13 fev. 2025.
+        </p>
+        <p>
+            MENDES, Walter. Substantivo. <strong>Brasil Escola Uol</strong>, [Online], [s. d.]. Gramática. Disponível em: https://
+            brasilescola.uol.com.br/gramatica/substantivo.htm. Acesso em: 13 fev. 2025.
+            <br><br>
+            NORMA CULTA. Alfabeto. Disponível em: https://www.normaculta.com.br/alfabeto/. Acesso em: 13 fev. 2025.
+        </p>
+    </section>
+    <script>
+        // Navbar
+            document.querySelector('.menu-toggle').addEventListener('click', () => {
+                const menu = document.querySelector('.navbar ul');
+                const icons = document.querySelectorAll('.menu-toggle i'); // Seleciona ambos os ícones
+
+                menu.classList.toggle('show'); // Alterna a visibilidade do menu
+
+                // Alterna entre o ícone de abrir (menu) e o ícone de fechar (x)
+                icons[0].style.display = icons[0].style.display === 'none' ? 'block' : 'none'; // Mostra ou esconde o ícone de menu
+                icons[1].style.display = icons[1].style.display === 'none' ? 'block' : 'none'; // Mostra ou esconde o ícone de fechar
+            });
+            // Fechar o menu ao clicar em um link
+            const links = document.querySelectorAll('.navbar ul li a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    const menu = document.querySelector('.navbar ul');
+                    const icons = document.querySelectorAll('.menu-toggle i');
+
+                    // Fecha o menu ao clicar no link
+                    menu.classList.remove('show');
+                    icons[0].style.display = 'block'; // Exibe o ícone de menu
+                    icons[1].style.display = 'none'; // Esconde o ícone de fechar
+                });
+            });
+            // Captura o elemento navbar
+            const navbar = document.querySelector('.navbar');
+
+            // Função que altera a opacidade da navbar
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) { // Quando o scroll for maior que 50px
+                    navbar.style.backgroundColor = 'rgba(29, 91, 122, 0.438)'; // Opacidade 80% rgba(29, 91, 122, 0.438);
+                } else {
+                    navbar.style.backgroundColor = '#134969'; // Cor original sem transparência
+                }
+            });
+        document.addEventListener("DOMContentLoaded", () => {
+                const sliders = document.querySelectorAll('.slider-container');
+
+                sliders.forEach((sliderContainer, sliderIndex) => {
+                    const slides = sliderContainer.querySelectorAll('.slide');
+                    const esquerdaBtn = sliderContainer.querySelector('.seta.esquerda');
+                    const direitaBtn = sliderContainer.querySelector('.seta.direita');
+
+                    const dotsContainer = sliderContainer.parentElement.querySelector('.slider-indicadores');
+                    const dots = dotsContainer.querySelectorAll('.dot');
+
+                    let slideAtual = 0;
+
+                    function mostrarSlide(index) {
+                        slides.forEach(slide => slide.classList.remove('ativo'));
+                        dots.forEach(dot => dot.classList.remove('ativo'));
+
+                        slideAtual = (index + slides.length) % slides.length;
+                        slides[slideAtual].classList.add('ativo');
+                        dots[slideAtual].classList.add('ativo');
+                    }
+
+                    // Setas
+                    esquerdaBtn.addEventListener('click', () => mostrarSlide(slideAtual - 1));
+                    direitaBtn.addEventListener('click', () => mostrarSlide(slideAtual + 1));
+
+                    // Dots
+                    dots.forEach((dot, index) => {
+                        dot.addEventListener('click', () => mostrarSlide(index));
+                    });
+
+                    // Iniciar com o primeiro slide ativo
+                    mostrarSlide(slideAtual);
+                });
+            });
+       
+            const thumbnails = document.querySelectorAll('.video-thumbnail');
+                const modal = document.getElementById('videoModal');
+                const iframe = document.getElementById('videoIframe');
+                const fechar = document.querySelector('.fechar-modal');
+
+                thumbnails.forEach(thumbnail => {
+                    thumbnail.addEventListener('click', () => {
+                        const videoLink = thumbnail.getAttribute('data-video');
+                        iframe.src = videoLink + "?autoplay=1";
+                        modal.style.display = 'flex';
+                    });
+                });
+
+                fechar.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                    iframe.src = '';
+                });
+
+                window.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                        iframe.src = '';
+                    }
+                });
+                // Abrir modal ao clicar na imagem
+                    function openModal(imgElement) {
+                        let modal = document.getElementById("imageModal");
+                        let modalImg = document.getElementById("modalImg");
+
+                        modal.style.display = "flex";
+                        modalImg.src = imgElement.src;
+                    }
+
+                    // Fechar modal ao clicar no fundo ou no botão "X"
+                    function closeModal() {
+                        document.getElementById("imageModal").style.display = "none";
+                    }
+    document.querySelectorAll('.acordeon-header, .acordeon-headerb, .acordeon-headerc').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const isVisible = content.style.display === 'block';
+                content.style.display = isVisible ? 'none' : 'block';
+                const icon = header.querySelector('.acordeon-icon');
+                if (icon) {
+                    icon.classList.toggle('bx-chevron-up', !isVisible);
+                    icon.classList.toggle('bx-chevron-down', isVisible);
+                }
+            });
+        });
+        function configurarTabs(containerId) {
+                const container = document.getElementById(containerId);
+                const buttons = container.querySelectorAll('button');
+                const contents = container.querySelectorAll('.tab-content');
+
+                buttons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        buttons.forEach(btn => btn.classList.remove('ativo'));
+                        contents.forEach(content => content.classList.remove('ativo'));
+
+                        this.classList.add('ativo');
+                        const tabId = this.getAttribute('data-target');
+                        container.querySelector(`#${tabId}`).classList.add('ativo');
+                    });
+                });
+            }
+
+            // Inicializar os dois grupos de tabs
+            configurarTabs('grupo-tabs-a');
+            configurarTabs('grupo-tabs-b');
+            document.querySelectorAll('.slider-texto-container').forEach(initSliderTexto);
+
+                function initSliderTexto(container) {
+                    let slides = container.querySelectorAll('.slide-texto');
+                    let dots = container.querySelectorAll('.dot-texto');
+                    let currentIndex = 0;
+
+                    function mostrarSlide(index) {
+                        slides.forEach(slide => slide.classList.remove('ativo'));
+                        dots.forEach(dot => dot.classList.remove('ativo'));
+                        currentIndex = (index + slides.length) % slides.length;
+                        slides[currentIndex].classList.add('ativo');
+                        dots[currentIndex].classList.add('ativo');
+                    }
+
+                    container.mostrarSlideTexto = mostrarSlide;
+                    mostrarSlide(0);
+                }
+
+                // Essas funções são chamadas pelo onclick, pegando o container base
+                function mudarSlideTexto(button, direcao) {
+                    const container = button.closest('.slider-texto-container');
+                    const currentIndex = [...container.querySelectorAll('.slide-texto')].findIndex(slide => slide.classList.contains('ativo'));
+                    container.mostrarSlideTexto(currentIndex + direcao);
+                }
+
+                function irParaSlideTexto(dot, index) {
+                    const container = dot.closest('.slider-texto-container');
+                    container.mostrarSlideTexto(index);
+                }
+
+                function abrirQuizz(event) {
+                        event.preventDefault();
+                        const iframeContainer = document.getElementById('iframe-container');
+                        const iframe = document.getElementById('quizz-iframe');
+
+                        // Defina aqui o link do seu Genially
+                        iframe.src = 'https://view.genial.ly/SEU_LINK_DO_GENIALLY';
+                        iframeContainer.style.display = 'block';
+                    }
+                    function fecharQuizz() {
+                            const iframeContainer = document.getElementById('iframe-container');
+                            const iframe = document.getElementById('quizz-iframe');
+
+                            iframe.src = ''; // limpa o conteúdo do iframe
+                            iframeContainer.style.display = 'none';
+                        }
+    </script>
+</body>
+</html>
