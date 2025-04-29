@@ -1675,14 +1675,16 @@
         /* Conteúdo das tabs */
         .tabs-content {
             border: 2px solid #134969;
-            padding: 20px;
+            padding: 0;
+            display: none; /* <-- Ocultamos o container inteiro inicialmente */
             border-radius: 0 0 15px 15px;
             background-color: #b9e5a92c;
         }
          /* Conteúdo das tabs */
         .tabs-contentb {
             border: 2px solid #3a95a6;
-            padding: 20px;
+            padding: 0;
+            display: none; /* <-- Ocultamos o container inteiro inicialmente */
             border-radius: 0 0 15px 15px;
             background-color: #3a96a61c;
         }
@@ -1690,8 +1692,11 @@
             display: none;
         }
 
-        .tab-content.ativo {
+        .tab-content.ativo,
+        .tabs-content.ativo, /* <-- ESSA LINHA AQUI */
+        .tabs-contentb.ativo {
             display: block;
+            padding: 20px;
         }
         .slider-texto-container {
             position: relative;
@@ -2144,7 +2149,7 @@
         </p>
         <h2 class="titulo-quadrov"><span class="text-greenv">Tabela 1.</span> Tipos de Numerais</h2>
         <div class="quadroimg">
-            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745482083/pzhagufipkyg0rfwsixn.png"
+            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745957382/ll3mzzrxkw28wsupowej.png"
                 alt="Imagem vertical" onclick="openModal(this)">
         </div>
         <!-- Modal para exibir a imagem ampliada -->
@@ -2319,13 +2324,13 @@
         </p>
         <section class="tabs-section" id="grupo-tabs-a">
             <div class="tabs-header">
-                <button class="tab-btn ativo" data-target="numero">NÚMERO</button>
+                <button class="tab-btn" data-target="numero">NÚMERO</button>
                 <button class="tab-btn" data-target="grau">GRAU</button>
                 <button class="tab-btn" data-target="genero">GÊNERO</button>
             </div>
         
             <div class="tabs-content">
-                <div id="numero" class="tab-content ativo">
+                <div id="numero" class="tab-content">
                     <p><strong>▸</strong> Singular (flor)</p>
                     <p><strong>▸</strong> Plural (flores)</p>
                 </div>
@@ -2874,12 +2879,12 @@
         </p>
         <section class="tabs-section" id="grupo-tabs-b">
             <div class="tabs-header">
-                <button class="tab-btnb ativo" data-target="artigodef">ARTIGO DEFINIDO</button>
+                <button class="tab-btnb" data-target="artigodef">ARTIGO DEFINIDO</button>
                 <button class="tab-btnb" data-target="artigoind">ARTIGO INDEFINIDO</button>
             </div>
         
             <div class="tabs-contentb">
-                <div id="artigodef" class="tab-content ativo">
+                <div id="artigodef" class="tab-content">
                     <p>Os artigos definidos <strong>(o, a, os, as)</strong> definem ou individualizam algo específico, de forma
                         precisa, os substantivos, que podem ser uma pessoa, objeto ou lugar.</p>
                     <p>Exemplo:</p>
@@ -3153,22 +3158,42 @@
                 const container = document.getElementById(containerId);
                 const buttons = container.querySelectorAll('button');
                 const contents = container.querySelectorAll('.tab-content');
+                const contentWrappers = container.querySelectorAll('[class^="tabs-content"]');
+
+                // Garante que nada comece aberto
+                buttons.forEach(btn => btn.classList.remove('ativo'));
+                contents.forEach(content => content.classList.remove('ativo'));
+                contentWrappers.forEach(wrapper => wrapper.classList.remove('ativo'));
 
                 buttons.forEach(button => {
                     button.addEventListener('click', function () {
+                        const tabId = this.getAttribute('data-target');
+                        const targetContent = container.querySelector(`#${tabId}`);
+                        const isActive = this.classList.contains('ativo');
+
+                        // Fecha todos
                         buttons.forEach(btn => btn.classList.remove('ativo'));
                         contents.forEach(content => content.classList.remove('ativo'));
+                        contentWrappers.forEach(wrapper => wrapper.classList.remove('ativo'));
 
-                        this.classList.add('ativo');
-                        const tabId = this.getAttribute('data-target');
-                        container.querySelector(`#${tabId}`).classList.add('ativo');
+                        // Se ainda não estava ativo, ativa
+                        if (!isActive) {
+                            this.classList.add('ativo');
+                            targetContent.classList.add('ativo');
+
+                            // Ativa também o contêiner do conteúdo
+                            const parentWrapper = targetContent.closest('[class^="tabs-content"]');
+                            if (parentWrapper) parentWrapper.classList.add('ativo');
+                        }
                     });
                 });
             }
 
-            // Inicializar os dois grupos de tabs
+            // Inicializar os dois grupos de tabs (adicione outros conforme necessário)
             configurarTabs('grupo-tabs-a');
             configurarTabs('grupo-tabs-b');
+
+            
             document.querySelectorAll('.slider-texto-container').forEach(initSliderTexto);
 
                 function initSliderTexto(container) {
