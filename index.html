@@ -1992,6 +1992,64 @@
             .download-btn:hover {
                 background-color: #3a96a677;
             }
+            /* Estilização do rodapé */
+        .footer {
+            background-color: #FFFFFF; /* Fundo branco */
+            text-align: center; /* Centralizar texto */
+            padding: 15px 0; /* Espaçamento interno */
+            box-sizing: border-box; /* Inclui padding nas dimensões */
+        }
+
+        .footer p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #015A42; /* Cor do texto */
+            margin: 0; /* Remove espaçamento externo */
+        }
+        /* Texto descritivo */
+        .footer .fonte-menor {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            color: #555; /* Cor neutra */
+            line-height: 1.5; /* Espaçamento entre linhas */
+            display: block; /* Garante quebra para nova linha */
+            margin-top: 10px; /* Espaço entre o texto e o divisor */
+        }
+                /* Divisor */
+        .footer-divider {
+            border: none; /* Remove borda padrão */
+            height: 1px; /* Altura da linha */
+            background-color: #015A42; /* Cor da linha */
+            margin: 10px auto; /* Espaçamento vertical */
+            width: 80%; /* Define a largura do divisor */
+            opacity: 0.5; /* Reduz opacidade para suavizar */
+        }
+                /* Ajustes do rodapé para mobile */
+        @media (max-width: 480px) {
+            .footer p {
+                font-size: 15px; /* Ajusta o tamanho da fonte */
+            }
+            .footer .fonte-menor {
+                font-size: 12px; /* Reduz tamanho da fonte */
+                line-height: 1.4; /* Ajusta o espaçamento */
+            }
+            .footer-divider {
+                width: 100%; /* Ajusta largura do divisor no mobile */
+            }
+        }
+        .logo-final {
+    background-color: #b9e5a92c;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.logo-final img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
     </style>
 </head>
 <body>
@@ -3033,6 +3091,18 @@
             NORMA CULTA. Alfabeto. Disponível em: https://www.normaculta.com.br/alfabeto/. Acesso em: 13 fev. 2025.
         </p>
     </section>
+    <section class="logo-final">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1746464849/kawkuex8fxesnmqpek5n.png"
+            alt="Logo do Projeto">
+    </section>
+    <footer class="footer">
+        <p>Copyright © de Universidade São Francisco</p>
+        <hr class="footer-divider">
+        <span class="fonte-menor">Todos os direitos reservados. Este ebook ou
+            qualquer parte dele não pode ser reproduzido ou usado em quaisquer formas (eletrônico,
+            gravação, fotocópia, distribuição pela Internet ou outros) sem autorização
+            expressa, por escrito, da <strong>Universidade São Francisco.</strong></span>
+    </footer>
     <script>
         // Navbar
             document.querySelector('.menu-toggle').addEventListener('click', () => {
