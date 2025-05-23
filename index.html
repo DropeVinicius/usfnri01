@@ -126,15 +126,20 @@
             position: absolute;
             top: 60px;
             right: 0;
-            width: 220px; /* Aumenta um pouco a largura */
-            max-height: 300px; /* Define um limite de altura */
-            overflow-y: auto; /* Adiciona scroll vertical se necessário */
+            width: 220px;
+            max-height: 80vh;
+            overflow-y: auto;
             border-radius: 5px;
             z-index: 10;
-            scrollbar-width: thin; /* Estiliza a barra de rolagem (Firefox) */
-            scrollbar-color: #fff #134969; /* Personaliza a cor */
+            scrollbar-width: thin;
+            scrollbar-color: #fff #134969;
         }
-
+        @media (max-width: 400px) {
+            .navbar ul li {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+        }
         .navbar ul.show {
             display: flex;
         }
@@ -1185,6 +1190,20 @@
             margin-top: 5px;
             max-width: 500px;
         }
+        .fonte-imagemtable {
+            font-size: 12px !important;
+            color: #555 !important;
+            display: block !important; /* melhor do que flex para parágrafos simples */
+            text-align: left !important; /* ou right se quiser alinhar à direita */
+            margin: 10px auto !important;
+            width: 90% !important;
+            max-width: 900px !important;
+        }
+        @media (max-width: 600px) {
+            .fonte-imagemtable{
+                text-align: center !important;
+            }
+        }
         .text-italic {
             font-style: italic;
         }
@@ -1541,7 +1560,7 @@
         /* Responsividade para telas menores ainda (480px) */
         @media (max-width: 480px) {
             .acordeon-header {
-                font-size: 19px; /* Reduz ainda mais o tamanho do texto */
+                font-size: 16px; /* Reduz ainda mais o tamanho do texto */
                 padding: 10px; /* Ajustar espaçamento */
             }
 
@@ -1556,10 +1575,10 @@
 
             .acordeon-content p {
                 margin: 10px; /* Ajustar margem para menor espaçamento */
-                font-size: 19px;
+                font-size: 15px;
             }
             .acordeon-headerb {
-                font-size: 19px; /* Reduz ainda mais o tamanho do texto */
+                font-size: 16px; /* Reduz ainda mais o tamanho do texto */
                 padding: 10px; /* Ajustar espaçamento */
             }
 
@@ -1574,11 +1593,11 @@
 
             .acordeon-contentb p {
                 margin: 10px; /* Ajustar margem para menor espaçamento */
-                font-size: 19px;
+                font-size: 15px;
             }
 
             .acordeon-headerc {
-                font-size: 19px; /* Reduz ainda mais o tamanho do texto */
+                font-size: 16px; /* Reduz ainda mais o tamanho do texto */
                 padding: 10px; /* Ajustar espaçamento */
             }
 
@@ -1593,7 +1612,7 @@
 
             .acordeon-contentc p {
                 margin: 10px; /* Ajustar margem para menor espaçamento */
-                font-size: 19px;
+                font-size: 15px;
             }
         }
             /* Acordeon styles FIM */
@@ -1696,7 +1715,9 @@
         .tabs-content.ativo, /* <-- ESSA LINHA AQUI */
         .tabs-contentb.ativo {
             display: block;
-            padding: 20px;
+            padding: 5px;
+            margin-left: 10px;
+            margin-right: 10px;
         }
         .slider-texto-container {
             position: relative;
@@ -2096,6 +2117,73 @@
         .paragraforeduzido {
             font-size: 14px;
         }
+        /* Estilo geral da tabela */
+        .tabela-responsiva table {
+            width: 40%;
+            min-width: 800px; /* Limita a largura no desktop */
+            margin: 0 auto; /* Centraliza */
+            border-collapse: collapse; /* Remove espaçamentos extras */
+        }
+        .tabela-responsiva {
+            width: 100%;
+            overflow-x: auto; /* Permite rolagem horizontal */
+        }
+
+        /* Estilo para as células */
+        .tabela-responsiva th,
+        .tabela-responsiva td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+
+        /* Ajuste apenas para telas pequenas */
+        @media (max-width: 768px) {
+            .tabela-responsiva table {
+                width: 100%;
+                max-width: 100%; /* Ocupa toda a largura disponível */
+            }
+            
+            .tabela-responsiva th,
+            .tabela-responsiva td {
+                padding: 4px; /* Menos espaço interno */
+                font-size: 0.8rem; /* Fonte menor */
+            }
+        }
+
+        .tabela-artigos {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        .tabela-artigos th, 
+        .tabela-artigos td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .tabela-artigos .coluna-titulo {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .coluna-vermelha {
+            background-color: #809dae;
+        }
+
+        .coluna-azul {
+            background-color: #809dae;
+        }
+
+        .coluna-verde {
+            background-color: #809dae;
+        }
+
+        .coluna-amarela {
+            background-color: #809dae;
+        }
     </style>
 </head>
 <body>
@@ -2252,18 +2340,339 @@
             em quatro categorias principais, como vemos a seguir:
         </p>
         <h2 class="titulo-quadrov"><span class="text-greenv">Tabela 1.</span> Tipos de Numerais</h2>
-        <div class="quadroimg">
-            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1746465104/jotqkcwqgtaorxpmfr7e.png"
-                alt="Imagem vertical" onclick="openModal(this)">
-        </div>
-        <!-- Modal para exibir a imagem ampliada -->
-        <div id="imageModal" class="modal" onclick="closeModal()">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modalImg">
-        </div>
-        <p class="fonte-imagem">
-            <span class="text-italic"><strong>Fonte:</strong> Adaptada de Toda a Matéria. Disponível em: https://www.todamateria.com.br/. Acesso em: 03 abr. 2025.</span>
+        <div class="tabela-responsiva">
+        <table style="width: 50%; min-width: 600px; border-collapse: collapse; text-align: center;">
+            <thead>
+                <tr style="background-color: #b9e5a9;">
+                    <th style="padding: 10px; color: #FFF;">Cardinais<br><small>(Indicam quantidades exatas)</small></th>
+                    <th style="padding: 10px; color: #FFF;">Ordinais<br><small>(Expressam posição ou ordem em uma
+                            sequência)</small></th>
+                    <th style="padding: 10px; color: #FFF;">Multiplicativos<br><small>(Indicam múltiplos de uma
+                            quantidade)</small></th>
+                    <th style="padding: 10px; color: #FFF;">Fracionários<br><small>(Representam partes de um todo)</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 39 linhas -->
+                <!-- Linha 2 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Um (1)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Primeiro</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                </tr>
+                <!-- Linha 3 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Dois (2)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Segundo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Dobro,Duplo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Meio</td>
+                </tr>
+                <!-- Linha 4 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Três (3)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Terceiro</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Triplo, Tríplice</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Terço</td>
+                </tr>
+                <!-- Linha 5 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quatro (4)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quarto</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quádruplo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quarto</td>
+                </tr>
+                <!-- Linha 6 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Cinco (05)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quinto</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quintuplo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quinto</td>
+                </tr>
+                <!-- Linha 7 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Seis</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sexto</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sêxtuplo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sexto</td>
+                </tr>
+                <!-- Linha 8 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sete</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sétimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sétuplo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sétimo</td>
+                </tr>
+                <!-- Linha 9 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Oito</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Oitavo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Óctuplo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Oitavo</td>
+                </tr>
+                <!-- Linha 10 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Nove</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Nono</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Nônuplo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Nono</td>
+                </tr>
+                <!-- Linha 11 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Dez</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Décimo
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Décuplo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Décimo</td>
+                </tr>
+                <!-- Linha 12 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td  style="border: 1px solid #ddd; padding: 5px;">Onze</td>
+                    <td  style="border: 1px solid #ddd; padding: 5px;">Décimo Primeiro
+                    </td>
+                    <td  style="border: 1px solid #ddd; padding: 5px;">Undécuplo</td>
+                    <td  style="border: 1px solid #ddd; padding: 5px;">Onze Avos
+                    </td >
+                </tr>
+                <!-- Linha 13 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td  style="border: 1px solid #ddd; padding: 5px;">Doze</td>
+                    <td  style="border: 1px solid #ddd; padding: 5px;">Décimo Segundo
+                    </td>
+                    <td  style="border: 1px solid #ddd; padding: 5px;">Duodécuplo</td>
+                    <td  style="border: 1px solid #ddd; padding: 5px;">Doze Avos
+                    </td>
+                </tr>
+                <!-- Linha 14 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Treze</>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Décimo Terceiro
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 5px;"> -</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Treze Avos
+                    </td>
+                </tr>
+                <!-- Linha 15 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Catorze</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Décimo Quarto
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Catorze Avos
+                    </td>
+                </tr>
+                <!-- Linha 16 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quinze</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Décimo Quinto
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quinze Avos
+                    </td>
+                </tr>
+                <!-- Linha 17 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Dezesseis</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Décimo Sexto
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Dezesseis Avos
+                    </td>
+                </tr>
+                <!-- Linha 18 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Dezessete</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Décimo Sétimo
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Dezessete Avos
+                    </td>
+                </tr>
+                <!-- Linha 19 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Dezoito</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Décimo Oitavo
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Dezoito Avos
+                    </td>
+                </tr>
+                <!-- Linha 20 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Dezenove</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Décimo Nono
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Dezenove Avos
+                    </td>
+                </tr>
+                <!-- Linha 21 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Vinte</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Vigésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Vinte Avos
+                    </td>
+                </tr>
+                <!-- Linha 22 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Trinta</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Trigésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Trinta Avos
+                    </td>
+                </tr>
+                <!-- Linha 23 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quarenta</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quadragésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quarenta Avos
+                    </td>
+                </tr>
+                <!-- Linha 24 -->
+                <tr style="background-color: #b9e5a92c;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Cinquenta (50)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quinquagésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Cinquenta Avos
+                    </td>
+                </tr>
+                <!-- Linha 25 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sessenta (60)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sexagésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sessenta Avos
+                    </td>
+                </tr>
+                <!-- Linha 26 -->
+                <tr style="background-color: #b9e5a92c;">
+                    <td >Setenta (70)</td>
+                    <td >Septuagésimo</td>
+                    <td >-</td>
+                    <td >Setenta Avos
+                    </td>
+                </tr>
+                <!-- Linha 27 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Oitenta (80)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Octogésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Oitenta Avos
+                    </td>
+                </tr>
+                <!-- Linha 28 -->
+                <tr style="background-color: #b9e5a92c;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Noventa (90)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Nonagésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Noventa Avos
+                    </td>
+                </tr>
+                <!-- Linha 29 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Cem (100)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Centésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Cêntuplo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Centésimo</td>
+                </tr>
+                <!-- Linha 30 -->
+                <tr style="background-color: #b9e5a92c;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Duzentos (200)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Ducentésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Ducentésimo
+                    </td>
+                </tr>
+                <!-- Linha 31 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Trezentos (300)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Trecentésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Trecentésimo
+                    </td>
+                </tr>
+                <!-- Linha 32 -->
+                <tr style="background-color: #b9e5a92c;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quatrocentos (400)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quadringentésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quadringentésimo
+                    </td>
+                </tr>
+                <!-- Linha 33 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quinhentos (500)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quingentésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Quingentésimo
+                    </td>
+                </tr>
+                <!-- Linha 34 -->
+                <tr style="background-color: #b9e5a92c;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Seiscentos (600)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sexcentésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Sexcentésimo
+                    </td>
+                </tr>
+                <!-- Linha 35 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Setecentos (700)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Septingentésimo
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Septingentésimo
+                    </td>
+                </tr>
+                <!-- Linha 36 -->
+                <tr style="background-color: #b9e5a92c;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Oitocentos (800)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Octingentésimo
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Octingentésimo
+                    </td>
+                </tr>
+                <!-- Linha 37 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Novecentos (900)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Nongentésimo ou Noningentésimo
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Nongentésimo
+                    </td>
+                </tr>
+                <!-- Linha 38 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Mil (1000)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Milésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Milésimo</td>
+                </tr>
+                <!-- Linha 39 -->
+                <tr style="background-color: #f9f9f9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Milhão (1 000 000)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Milionésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Milionésimo</td>
+                </tr>
+                <!-- Linha 40 -->
+                <tr style="background-color: #e8f5e9;">
+                    <td style="border: 1px solid #ddd; padding: 5px;">Bilhão (1 000 000 000)</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Bilionésimo</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">-</td>
+                    <td style="border: 1px solid #ddd; padding: 5px;">Bilionésimo</td>
+                </tr>
+            </tbody>  
+        </table>
+        <p class="fonte-imagemtable">
+            <span class="text-italic"><strong>Fonte:</strong> Adaptada de Toda a Matéria. Disponível em:
+                https://www.todamateria.com.br/. Acesso em: 03 abr. 2025.</span>
         </p>
+    </div>
+        
     </section>
     <section class="secao2" id="secao2">
         <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745482633/lzh6tivsuwgnneylpzvp.png"
@@ -3008,18 +3417,77 @@
             ou plural) com o substantivo que o acompanha. O quadro abaixo resume essa relação:
         </p>
         <h2 class="titulo-quadrov"><span class="text-greenv">Quadro 2.</span> Artigos Definidos e Indefinidos</h2>
-        <div class="quadroimg">
-            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745937921/wcuw525fm532msrk1jkt.png"
-                alt="Imagem vertical" onclick="openModal(this)">
-        </div>
-        <!-- Modal para exibir a imagem ampliada -->
-        <div id="imageModal" class="modal" onclick="closeModal()">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modalImg">
-        </div>
-        <p class="fonte-imagem">
-            <span class="text-italic"><strong>Fonte:</strong> Elaborado pelo autor.</span>
-        </p>
+        <div class="tabela-responsiva">
+            <table class="tabela-artigos">
+                <thead>
+                    <tr>
+                        <th></th> <!-- Célula vazia -->
+                        <th class="coluna-titulo coluna-vermelha">Artigos</th>
+                        <th class="coluna-titulo coluna-azul">Gênero</th>
+                        <th class="coluna-titulo coluna-verde">Número</th>
+                        <th class="coluna-titulo coluna-amarela">Frase Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="4">Definidos</td>
+                        <td>o</td>
+                        <td>masculino</td>
+                        <td>singular</td>
+                        <td>O garoto foi jantar na casa dos avós.</td>
+                    </tr>
+                    <tr>
+                        <td>a</td>
+                        <td>feminino</td>
+                        <td>singular</td>
+                        <td>Ganhamos a jaqueta que esperávamos.</td>
+                    </tr>
+                    <tr>
+                        <td>os</td>
+                        <td>masculino</td>
+                        <td>plural</td>
+                        <td>Rose aproveitou para rever os amigos.</td>
+                    </tr>
+                    <tr>
+                        <td>as</td>
+                        <td>feminino</td>
+                        <td>plural</td>
+                        <td>As meninas foram viajar.</td>
+                    </tr>
+        
+                    <tr>
+                        <td rowspan="4">Indefinidos</td>
+                        <td>um</td>
+                        <td>masculino</td>
+                        <td>singular</td>
+                        <td>Eu vi um gato no jardim.</td>
+                    </tr>
+                    <tr>
+                        <td>uma</td>
+                        <td>feminino</td>
+                        <td>singular</td>
+                        <td>Ela comprou uma bolsa nova.</td>
+                    </tr>
+                    <tr>
+                        <td>uns</td>
+                        <td>masculino</td>
+                        <td>plural</td>
+                        <td>Eles encontraram uns amigos no parque.</td>
+                    </tr>
+                    <tr>
+                        <td>umas</td>
+                        <td>feminino</td>
+                        <td>plural</td>
+                        <td>Eu preciso de umas ideias para o projeto.</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <p class="fonte-imagem">
+                <span class="text-italic">
+                    Fonte: Elaborado pelo autor.
+                </span></p>
+           </div>
         <p>
             A principal diferença entre os artigos definidos e indefinidos está no nível de especificidade. Quando
             utilizamos artigos definidos, estamos nos referindo a algo que já é conhecido no contexto da conversa ou
