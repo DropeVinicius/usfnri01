@@ -216,11 +216,11 @@
             background-position: bottom center; /* mostra mais da parte inferior */
             background-repeat: no-repeat;
             background-attachment: fixed;
-            opacity: 1; /* ou ajuste se quiser efeito */
+            opacity: 0.5; /* ou ajuste se quiser efeito */
             z-index: -1;
+            /* Ajuste de transparência */
+            filter: brightness(0.9); /* Escurece levemente a imagem para maior contraste do texto */
         }
-
-        
 
         .capa-livro .conteudo-capa {
             text-align: center;
@@ -423,7 +423,7 @@
         .secao1 .titulo-verde {
             font-size: 25px;
             font-family: 'Roboto', sans-serif;
-            color: #b9e5a9; /* Cor verde */
+            color: #7ac15d; /* Cor verde */
             width: 90%;
             margin: 20px auto;
             max-width: 800px;
@@ -509,7 +509,7 @@
         .secao2 .titulo-verde {
             font-size: 25px;
             font-family: 'Roboto', sans-serif;
-            color: #b9e5a9; /* Cor verde */
+            color: #7ac15d; /* Cor verde */
             width: 90%;
             margin: 20px auto;
             max-width: 800px;
@@ -1731,7 +1731,19 @@
             background-color: #809dae00;
             border-radius: 8px;
             }
-
+        /* Centraliza todos os textos dentro do slider */
+        .slider-texto-container, 
+        .slide-texto, 
+        .titulo-texto, 
+        .conteudo-texto {
+            text-align: center !important;
+        }
+        /* Centraliza o parágrafo solto abaixo do slider */
+        .slider-texto-container + p {
+            text-align: center !important;
+            margin: 20px auto !important; /* para manter espaçamento */
+            max-width: 600px !important;   /* mesmo alinhamento visual do slider */
+        }
         .slider-texto-wrapper {
             display: flex;
             transition: transform 0.5s ease-in-out;
