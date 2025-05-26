@@ -299,7 +299,7 @@
         .introducao .caixa-texto {
             width: 100%;
             background-color: #809dae70; /* Verde mais claro */
-            padding: 20px 0;
+            padding: 64px 0; /* respiro maior conforme solicitado */
         }
                 /* Conteúdo centralizado dentro da faixa */
         .introducao .conteudo-centralizado {
@@ -380,6 +380,11 @@
             }
         }
         /* Estilo base da seção */
+        .secao1 .conteudo-secao {
+            width: 100% !important;
+            padding: 64px 0 !important; /* padding vertical conforme solicitado */
+            box-sizing: border-box !important;
+        }
         .secao1 {
             display: flex;
             flex-direction: column;
@@ -428,6 +433,7 @@
             margin: 20px auto;
             max-width: 800px;
             text-align: left;
+            margin-top: 64px; /* ou o valor que desejar, pode ser 30px, 40px, etc. */
         }
         /* Parágrafo padrão */
         .secao1 p {
@@ -439,7 +445,6 @@
             margin: 20px auto;
             width: 90%;
             max-width: 800px;
-                 
         }
 
         /* Responsivo */
@@ -475,7 +480,16 @@
             background-color: #3a96a61c;
             border-bottom: 3px solid #3a95a6;
         }
-
+        .secao2 .acordeon-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto; /* Centraliza */
+        }
+        .secao2 .conteudo-secao {
+            width: 100%;
+            padding: 64px 0; /* padding vertical padronizado */
+            box-sizing: border-box;
+        }
         /* Imagem de topo */
         .secao2 .imagem-topo {
             width: 100%;
@@ -561,7 +575,11 @@
             background-color: #b9e5a92c;
             border-bottom: 3px solid #92d678;
         }
-
+        .secao3 .conteudo-secao {
+            width: 100% !important;
+            padding: 64px 0 !important; /* padding vertical conforme solicitado */
+            box-sizing: border-box !important;
+        }
         /* Imagem de topo */
         .secao3 .imagem-topo {
             width: 100%;
@@ -647,7 +665,16 @@
             background-color: #809dae70;
             border-bottom: 3px solid #134969;
         }
-
+        .secao4 .conteudo-secao {
+            width: 100% !important;
+            padding: 64px 0 !important; /* padding vertical conforme solicitado */
+            box-sizing: border-box !important;
+        }
+        .secao4 .acordeon-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto; /* Centraliza */
+        }
         /* Imagem de topo */
         .secao4 .imagem-topo {
             width: 100%;
@@ -733,7 +760,16 @@
             background-color: #b9e5a92c;
             border-bottom: 3px solid #92d678;
         }
-
+        .secao5 .conteudo-secao {
+            width: 100% !important;
+            padding: 64px 0 !important; /* padding vertical conforme solicitado */
+            box-sizing: border-box !important;
+        }
+        .secao5 .acordeon-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto; /* Centraliza */
+        }
         /* Imagem de topo */
         .secao5 .imagem-topo {
             width: 100%;
@@ -819,7 +855,11 @@
             background-color: #3a96a61c;
             border-bottom: 3px solid #3a95a6;
         }
-
+        .secao6 .conteudo-secao {
+            width: 100% !important;
+            padding: 64px 0 !important; /* padding vertical conforme solicitado */
+            box-sizing: border-box !important;
+        }
         /* Imagem de topo */
         .secao6 .imagem-topo {
             width: 100%;
@@ -849,6 +889,7 @@
             margin: 20px auto;
             max-width: 800px;
             text-align: left;
+            
         }
         .secao6 .titulo-verde {
             font-size: 25px;
@@ -952,10 +993,9 @@
             text-align: justify;
             line-height: 1.6;
             color: #333;
-            margin-bottom: 10px auto;
+            margin: 10px auto;
             width: 90%;
             max-width: 800px;
-                 
         }
 
         /* Responsivo */
@@ -1068,7 +1108,11 @@
                 font-size: 0.95rem;
             }
         }
-
+        .conteudo-secao {
+            width: 100% !important;
+            padding: 64px 0 !important; /* padding vertical conforme solicitado */
+            box-sizing: border-box !important;
+        }
                 /* Título do Slider */
         .slider-quadrinhos .titulo-slider {
             text-align: center;
@@ -1360,6 +1404,7 @@
             color: #333; /* Verde */
             margin-top: 50px;
             font-weight: normal; /* Evita que o título fique em negrito */
+            text-align: center;
         }
         .text-greenv{
             color: #015A42;
@@ -2015,7 +2060,7 @@
                 gap: 8px;
                 transition: all 0.3s ease;
                 font-weight: bold;
-                margin-top: 80px;
+                margin-top: 20px;
             }
 
             .download-btn i {
@@ -2271,6 +2316,7 @@
                 1. SAUDAÇÕES E DESPEDIDAS
             </h1>
         </div>
+        <div class="conteudo-secao">
         <p>
             A comunicação é essencial para interagir com outras pessoas e sentir parte de um novo ambiente. No
             dia a dia, usamos saudações e apresentações para iniciar conversas e conhecer melhor quem está ao
@@ -2334,6 +2380,7 @@
                 <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
+    </div>
     </section>
     <section class="secao1">
         <h1 class="titulo-verde">
@@ -2684,7 +2731,6 @@
                 https://www.todamateria.com.br/. Acesso em: 03 abr. 2025.</span>
         </p>
     </div>
-        
     </section>
     <section class="secao2" id="secao2">
         <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745482633/lzh6tivsuwgnneylpzvp.png"
@@ -2695,6 +2741,7 @@
                 2. INFORMAÇÕES GERAIS
             </h1>
         </div>
+        <div class="conteudo-secao">
         <p>
             Ao ingressar na faculdade, seja como estudante estrangeiro ou não, é importante conhecer algumas
             informações básicas para facilitar a adaptação ao novo ambiente acadêmico e a cultura universitária.
@@ -2779,6 +2826,7 @@
         <p>
             Esses aspectos podem contribuir para uma experiência acadêmica mais tranquila e enriquecedora.
         </p>
+    </div>
     </section>
     <section class="secao3" id="secao3">
         <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745524189/vm6embgebhgp2mhck5qn.png"
@@ -2788,6 +2836,7 @@
                 3. PEDIR INFORMAÇÕES
             </h1>
         </div>
+        <div class="conteudo-secao">
         <p>
             Um dos momentos mais importantes dentro da universidade é a solicitação de informações sobre disciplinas,
             horários de aula e localização de setores administrativos. Para estudantes estrangeiros, essa experiência
@@ -2899,6 +2948,7 @@
                 <iframe id="videoIframe" src="" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
+    </div>
     </section>
     <section class="secao4" id="secao4">
         <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745601513/wglkd0x3l2uasackwlxn.png"
@@ -2908,6 +2958,7 @@
                 4. SOLETRAÇÃO E O ALFABETO
             </h1>
         </div>
+        <div class="conteudo-secao">
         <p>
             Durante a conversa entre Sebastian e Maria José, houve um momento em que o estudante precisou
             soletrar seu sobrenome. Geralmente soletramos uma palavra quando não entendemos direito como ela é
@@ -3122,6 +3173,7 @@
             das palavras e não usamos o cedilha antes das vogais “i” e “e”, nesses casos usamos apenas o “c”. O
             grupo silábico fica ça, ce, ci, ço, çu (sendo lido como sa, se, si, so, su).
         </p>
+    </div>
     </section>
     <section class="secao5" id="secao5">
         <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1744848303/g7vh0r0sje52zd19k9ww.png"
@@ -3131,6 +3183,7 @@
                 5. ADVÉRBIOS
             </h1>
         </div>
+        <div class="conteudo-secao">
         <p>
             Quando estamos aprendendo uma língua nova, perguntas “como?”, “onde?” ou “quando?” aparecem
             com frequência. Para responder essas perguntas utilizamos os advérbios, que são palavras essenciais
@@ -3376,6 +3429,7 @@
         <p class="fonte-imagem">
             <span class="text-italic"><strong>Fonte:</strong> Adaptado de https://www.todamateria.com.br/classificacao-dos-adverbios/. Acesso em: 04 abr. 2025.</span>
         </p>
+    </div>
     </section>
     <section class="secao6" id="secao6">
         <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745482633/lzh6tivsuwgnneylpzvp.png"
@@ -3386,6 +3440,7 @@
                 6. ARTIGO
             </h1>
         </div>
+        <div class="conteudo-secao">
         <p>
             Para distinguir se estamos falando de algo específico ou algo em geral utilizamos pequenas palavras
             conhecidas como artigos. Os artigos sempre acompanham os substantivos, como por exemplo:
@@ -3402,6 +3457,7 @@
         <p>
             Os artigos podem ser definidos e indefinidos. Vamos entender melhor como isso funciona.
         </p>
+    
         <section class="tabs-section" id="grupo-tabs-b">
             <div class="tabs-header">
                 <button class="tab-btnb" data-target="artigodef">ARTIGO DEFINIDO</button>
@@ -3513,6 +3569,7 @@
             <strong>um gato, uma bolsa, uns amigos</strong> e <strong>umas ideias</strong>, em que não há uma determinação exata sobre quais
             são esses objetos ou pessoas.
         </p>
+    
         <section class="atividade-section">
             <div class="atividade-header">
                 <h2>AGORA É SUA VEZ!</h2>
@@ -3541,6 +3598,7 @@
                 <iframe id="quizz-iframe" src="" width="100%" height="500px"
                     style="border: 2px solid #3a95a6; border-radius: 10px;"></iframe>
             </div>
+        </div>
         </section>
     </section>
     <section class="conclusao" id="conclusao">
@@ -3551,6 +3609,7 @@
                 CONCLUSÃO
             </h1>
         </div>
+        <div class="conteudo-secao">
         <p>
             Nesta primeira unidade, exploramos elementos essenciais para a comunicação em português, incluindo
             aspectos gramaticais e situações do cotidiano acadêmico. Identificamos o alfabeto e suas pronúncias,
@@ -3568,11 +3627,13 @@
             seguras e naturais. Continue praticando e explorando o português no seu dia a dia, pois quanto mais
             familiaridade com a língua, mais confiante será a sua comunicação!
         </p>
+    
         <div id="download" class="download-section">
             <a href="" class="download-btn">
                 Baixar PDF <i class="fas fa-download"></i> <!-- Ícone de download -->
             </a>
         </div>
+    </div>
     </section>
     <section class="referencias" id="referencias">
         <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745601513/wglkd0x3l2uasackwlxn.png"
@@ -3582,6 +3643,7 @@
                 REFERÊNCIAS
             </h1>
         </div>
+        <div class="conteudo-secao">
         <p>
             AZEREDO, José Carlos de. <strong>Gramática Houaiss da Língua Portuguesa</strong>. 2. ed. São Paulo: Publifolha,
             2008.
@@ -3616,6 +3678,7 @@
             <br><br>
             NORMA CULTA. Alfabeto. Disponível em: https://www.normaculta.com.br/alfabeto/. Acesso em: 13 fev. 2025.
         </p>
+    </div>
     </section>
         <!-- Seção com os créditos e ficha técnica -->
         <section class="ficha-tecnica">
