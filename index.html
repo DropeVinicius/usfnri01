@@ -426,7 +426,7 @@
             text-align: left;
         }
         .secao1 .titulo-verde {
-            font-size: 25px;
+            font-size: 20px;
             font-family: 'Roboto', sans-serif;
             color: #015A42; /* Cor verde */
             width: 90%;
@@ -1672,97 +1672,244 @@
         /* Cabeçalho das tabs */
         .tabs-header {
             display: flex;
-            flex-wrap: wrap; /* permite quebra de linha */
-            justify-content: center;
-            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 0;
             background-color: transparent;
-            margin-bottom: 20px;
+            margin-bottom: 0;
+            position: relative;
         }
 
         /* Botões de cada aba */
         .tab-btn {
-            background-color: #134969;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
+            background-color: #b9e5a9;
+            color: #FFF;
+            border: 2px solid #b9e5a9;
+            border-bottom: none;
+            padding: 12px 20px;
+            margin: 0;
             cursor: pointer;
-            font-size: 16px;
-            max-width: 90%; /* impede que ultrapasse a tela */
-            word-break: break-word;
+            font-size: 14px;
+            font-weight: bold;
             text-align: center;
-            border-top-left-radius: 30px;
-            border-top-right-radius: 30px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            min-width: 120px;
+            white-space: nowrap;
+            /* NOVO: Impede que o botão mude de tamanho */
+            flex: 0 0 auto;
+            width: auto;
         }
         /* Botões de cada aba */
         .tab-btnb {
-            background-color: #3a95a6;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
+            background-color: #134969;
+            color: #FFF;
+            border: 2px solid #134969;
+            border-bottom: none;
+            padding: 12px 20px;
+            margin: 0;
             cursor: pointer;
-            font-size: 16px;
-            max-width: 90%; /* impede que ultrapasse a tela */
-            word-break: break-word;
+            font-size: 14px;
+            font-weight: bold;
             text-align: center;
-            border-top-left-radius: 30px;
-            border-top-right-radius: 30px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            min-width: 120px;
+            white-space: nowrap;
+            /* NOVO: Impede que o botão mude de tamanho */
+            flex: 0 0 auto;
+            width: auto;
         }
-        @media screen and (max-width: 480px) {
-            .tab-btn,
-            .tab-btnb {
-                font-size: 14px;
-                padding: 8px 15px;
-            }
-        }
+        /* Hover melhorado */
         .tab-btn:hover {
-            background-color: #1d5b7a;
+            background-color: #b9e5a9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
         .tab-btnb:hover {
-            background-color: rgba(29, 91, 122, 0.438);
+            background-color: #134969;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
-
+        
+        /* Estado ativo OTIMIZADO */
         .tab-btn.ativo {
-            background-color: #0f3c4e;
+            background-color: white;
+            color: #015A42;
+            border-color: #b9e5a9;
+            border-bottom: 2px solid #b9e5a9;
+            z-index: 3;
+            margin-bottom: -2px;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Conteúdo das tabs */
+        .tab-btnb.ativo {
+            background-color: white;
+            color: #134969;
+            border-color: #134969;
+            border-bottom: 2px solid #134969;
+            z-index: 3;
+            margin-bottom: -2px;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* Focus para acessibilidade */
+        .tab-btn:focus,
+        .tab-btnb:focus {
+            outline-offset: 2px;
+        }
+
+        .tab-btn:focus-visible,
+        .tab-btnb:focus-visible {
+            box-shadow: 0 0 0 3px rgba(58, 149, 166, 0.3);
+        }
+        /* Conteúdo das tabs - VERSÃO OTIMIZADA COM ALTURA FIXA */
         .tabs-content {
-            border: 2px solid #134969;
-            padding: 0;
-            display: none; /* <-- Ocultamos o container inteiro inicialmente */
-            border-radius: 10px;
-            background-color: #b9e5a92c;
+            border: 2px solid #b9e5a9;
+            border-radius: 0 8px 8px 8px;
+            background-color: white;
+            padding: 20px;
+            display: none;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* NOVO: Define altura mínima fixa para evitar "dança" dos botões */
+            min-height: 150px;
+            /* NOVO: Garante que o container mantenha tamanho consistente */
+            box-sizing: border-box;
         }
-         /* Conteúdo das tabs */
+
         .tabs-contentb {
-            border: 2px solid #3a95a6;
-            padding: 0;
-            display: none; /* <-- Ocultamos o container inteiro inicialmente */
-            border-radius: 10px;
-            background-color: #3a96a61c;
+            border: 2px solid #134969;
+            border-radius: 0 8px 8px 8px;
+            background-color: white;
+            padding: 20px;
+            display: none;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* NOVO: Define altura mínima fixa para evitar "dança" dos botões */
+            min-height: 150px;
+            /* NOVO: Garante que o container mantenha tamanho consistente */
+            box-sizing: border-box;
         }
+        /* Estados ativos do conteúdo */
+        .tabs-content.ativo,
+        .tabs-contentb.ativo {
+            display: block;
+        }
+
         .tab-content {
+            display: none;
+            line-height: 1.6;
+            color: #374151;
+            /* NOVO: Garante que o conteúdo não force expansão */
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .tab-content.ativo {
+            display: block;
+        }
+
+        /* Estilização do conteúdo interno */
+        .tab-content p {
+            margin-bottom: 12px;
+        }
+
+        .tab-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tab-content strong {
+            color: #000;
+        }
+
+        /* Remove o ::after antigo */
+        .tab-btn.ativo::after,
+        .tab-btnb.ativo::after {
             display: none;
         }
 
-        .tab-content.ativo,
-        .tabs-content.ativo, /* <-- ESSA LINHA AQUI */
-        .tabs-contentb.ativo {
-            display: block;
-            padding: 5px;
-            margin-left: 10px;
-            margin-right: 10px;
+        /* Regras de ocultação otimizadas */
+        .tab-content:not(.ativo),
+        .tabs-content:not(.ativo),
+        .tabs-contentb:not(.ativo) {
+            display: none;
+        }
+
+        /* Responsividade melhorada */
+        @media screen and (max-width: 768px) {
+            .tabs-header {
+                justify-content: center;
+            }
+
+            .tab-btn,
+            .tab-btnb {
+                flex: 1 1 45%;
+                font-size: 13px;
+                padding: 10px 15px;
+                min-width: 100px;
+            }
+
+            /* NOVO: Ajusta altura mínima em mobile */
+            .tabs-content,
+            .tabs-contentb {
+                min-height: 120px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .tab-btn,
+            .tab-btnb {
+                flex: 1 1 100%;
+                font-size: 14px;
+                padding: 12px 16px;
+                margin-bottom: 5px;
+            }
+
+            .tabs-content,
+            .tabs-contentb {
+                padding: 16px;
+                border-radius: 8px;
+                /* NOVO: Altura mínima menor em telas muito pequenas */
+                min-height: 100px;
+            }
+
+            .tabs-section {
+                margin: 20px auto;
+                padding: 0 10px;
+            }
+        }
+
+        /* Melhorias extras para UX */
+        @media (prefers-reduced-motion: reduce) {
+            .tab-btn,
+            .tab-btnb {
+                transition: none;
+            }
+        }
+
+        /* Estado de carregamento (opcional) */
+        .tabs-section.loading .tab-btn,
+        .tabs-section.loading .tab-btnb {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* NOVO: Se você quiser uma altura específica para cada grupo */
+        #grupo-tabs-c .tabs-content {
+            min-height: 180px; /* Ajuste conforme necessário */
+        }
+
+        #grupo-tabs-d .tabs-content {
+            min-height: 160px; /* Ajuste conforme necessário */
         }
         .slider-texto-container {
             position: relative;
@@ -2384,7 +2531,7 @@
     </section>
     <section class="secao1">
         <h1 class="titulo-verde">
-            1.1. NÚMEROS
+            1.1 NÚMEROS
         </h1>
         <p>
             Os números estão presentes em diversas situações do nosso cotidiano. Como você pode observar na
