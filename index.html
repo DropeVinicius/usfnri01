@@ -4099,42 +4099,76 @@
         });
         function configurarTabs(containerId) {
                 const container = document.getElementById(containerId);
+                if (!container) return; // Se não existir, evita erro no console
+
                 const buttons = container.querySelectorAll('button');
                 const contents = container.querySelectorAll('.tab-content');
-                const contentWrappers = container.querySelectorAll('[class^="tabs-content"]');
+                const contentWrappers = container.querySelectorAll('.tabs-content, .tabs-contentb, .tabs-contentc, .tabs-contentd');
 
-                // Garante que nada comece aberto
+                // Garante que tudo comece fechado
                 buttons.forEach(btn => btn.classList.remove('ativo'));
                 contents.forEach(content => content.classList.remove('ativo'));
                 contentWrappers.forEach(wrapper => wrapper.classList.remove('ativo'));
 
-                buttons.forEach(button => {
+                buttons.forEach((button, index) => {
+                    // Clique com mouse
                     button.addEventListener('click', function () {
-                        const tabId = this.getAttribute('data-target');
-                        const targetContent = container.querySelector(`#${tabId}`);
-                        const isActive = this.classList.contains('ativo');
+                        ativarTab(this);
+                    });
 
-                        // Fecha todos
-                        buttons.forEach(btn => btn.classList.remove('ativo'));
-                        contents.forEach(content => content.classList.remove('ativo'));
-                        contentWrappers.forEach(wrapper => wrapper.classList.remove('ativo'));
-
-                        // Se ainda não estava ativo, ativa
-                        if (!isActive) {
-                            this.classList.add('ativo');
-                            targetContent.classList.add('ativo');
-
-                            // Ativa também o contêiner do conteúdo
-                            const parentWrapper = targetContent.closest('[class^="tabs-content"]');
-                            if (parentWrapper) parentWrapper.classList.add('ativo');
+                    // Suporte ao teclado ← e →
+                    button.addEventListener('keydown', function (e) {
+                        if (e.key === 'ArrowRight') {
+                            e.preventDefault();
+                            const nextIndex = (index + 1) % buttons.length;
+                            buttons[nextIndex].focus();
+                        } else if (e.key === 'ArrowLeft') {
+                            e.preventDefault();
+                            const prevIndex = (index - 1 + buttons.length) % buttons.length;
+                            buttons[prevIndex].focus();
+                        } else if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            ativarTab(this); // Ativa com Enter ou Espaço
                         }
                     });
                 });
+
+                function ativarTab(botao) {
+                    const tabId = botao.getAttribute('data-target');
+                    const targetContent = container.querySelector(`#${tabId}`);
+                    const isActive = botao.classList.contains('ativo');
+
+                    // Fecha todos
+                    buttons.forEach(btn => {
+                        btn.classList.remove('ativo');
+                        btn.setAttribute('aria-selected', 'false');
+                    });
+                    contents.forEach(content => content.classList.remove('ativo'));
+                    contentWrappers.forEach(wrapper => wrapper.classList.remove('ativo'));
+
+                    // Ativa se ainda não estiver ativo
+                    if (!isActive) {
+                        botao.classList.add('ativo');
+                        botao.setAttribute('aria-selected', 'true');
+                        if (targetContent) {
+                            targetContent.classList.add('ativo');
+                            const parentWrapper = targetContent.closest('.tabs-content, .tabs-contentb, .tabs-contentc, .tabs-contentd');
+                            if (parentWrapper) parentWrapper.classList.add('ativo');
+                        }
+                    }
+                }
+
+                // Ativa a primeira aba por padrão
+                if (buttons.length > 0) {
+                    ativarTab(buttons[0]);
+                }
             }
 
-            // Inicializar os dois grupos de tabs (adicione outros conforme necessário)
+            // Inicializar os grupos de tabs
             configurarTabs('grupo-tabs-a');
             configurarTabs('grupo-tabs-b');
+            configurarTabs('grupo-tabs-c');
+            configurarTabs('grupo-tabs-d');  
 
             
             document.querySelectorAll('.slider-texto-container').forEach(initSliderTexto);
