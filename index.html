@@ -394,7 +394,11 @@
             background-color: #b9e5a92c;
             border-bottom: 3px solid #92d678;
         }
-
+        .secao1 .acordeon-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto; /* Centraliza */
+        }
         /* Imagem de topo */
         .secao1 .imagem-topo {
             width: 100%;
@@ -579,6 +583,11 @@
             width: 100% !important;
             padding: 64px 0 !important; /* padding vertical conforme solicitado */
             box-sizing: border-box !important;
+        }
+        .secao3 .acordeon-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto; /* Centraliza */
         }
         /* Imagem de topo */
         .secao3 .imagem-topo {
@@ -1173,7 +1182,7 @@
             background-color: transparent;
             border: none;
             font-size: 30px;
-            color: #015A42;
+            color: #b9e5a9;
             cursor: pointer;
             padding: 10px;
             z-index: 10;
@@ -1224,7 +1233,7 @@
         }
 
         .slider-indicadores .dot.ativo {
-            background-color: #015A42;
+            background-color: #92d678;
         }
         .fonte-imagem {
             font-size: 12px !important;
@@ -1238,7 +1247,7 @@
             font-size: 12px !important;
             color: #555 !important;
             display: block !important; /* melhor do que flex para parágrafos simples */
-            text-align: left !important; /* ou right se quiser alinhar à direita */
+            text-align: center !important; /* ou right se quiser alinhar à direita */
             margin: 10px auto !important;
             width: 90% !important;
             max-width: 900px !important;
@@ -1258,7 +1267,7 @@
             max-width: 600px;
             height: 400px;
             margin: 20px auto;
-            border: 2px solid #b9e5a9;
+            border: 2px solid #3a95a6;
             border-radius: 16px;
             padding: 20px; /* Espaço entre borda e imagem */
             box-sizing: border-box;
@@ -1290,7 +1299,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(185, 229, 169, 0.4); /* Cor verde com opacidade */
+            background-color: rgba(#3a95a6); /* Cor verde com opacidade */
             z-index: 1;
         }
         /* Ícone de play centralizado */
@@ -1298,7 +1307,7 @@
             z-index: 1;
             font-size: 90px;
             color: #fff;
-            background-color: #b9e5a9;
+            background-color: #3a95a6;
             border-radius: 25%;
             width: 150px;
             height: 125px;
@@ -1349,7 +1358,7 @@
             right: -10px;
             font-size: 30px;
             color: white;
-            background: #b9e5a9;
+            background: #3a95a6;
             border-radius: 50%;
             padding: 5px 10px;
             cursor: pointer;
@@ -1460,8 +1469,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #3a95a6;
-            color: white;
+            background-color: #b9e5a9;
+            color: #015A42;
             cursor: pointer;
             padding: 15px;
             font-size: 17px;
@@ -1472,8 +1481,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #134969;
-            color: white;
+            background-color: #b9e5a9;
+            color: #015A42;
             cursor: pointer;
             padding: 15px;
             font-size: 17px;
@@ -1499,7 +1508,7 @@
             border-radius: 5px;
             background-color: #f9f9f9;
             padding-top: 0; /* Remove padding para que o header toque no conteúdo */
-            border: 2px solid #3a95a6;
+            border: 2px solid #b9e5a9;
             border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
         }
 
@@ -1682,9 +1691,9 @@
 
         /* Botões de cada aba */
         .tab-btn {
-            background-color: #b9e5a9;
-            color: #015A42;
-            border: 2px solid #b9e5a9;
+            background-color: #3a95a6;
+            color: white;
+            border: 2px solid #3a95a6;
             border-bottom: none;
             padding: 12px 20px;
             margin: 0;
@@ -1728,7 +1737,7 @@
         }
         /* Hover melhorado */
         .tab-btn:hover {
-            background-color: #b9e5a9;
+            background-color: #3a95a6;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
@@ -1742,9 +1751,9 @@
         /* Estado ativo OTIMIZADO */
         .tab-btn.ativo {
             background-color: white;
-            color: #015A42;
-            border-color: #b9e5a9;
-            border-bottom: 2px solid #b9e5a9;
+            color: #3a95a6;
+            border-color: #3a95a6;
+            border-bottom: 2px solid #3a95a6;
             z-index: 3;
             margin-bottom: -2px;
             box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
@@ -1771,7 +1780,7 @@
         }
         /* Conteúdo das tabs - VERSÃO OTIMIZADA COM ALTURA FIXA */
         .tabs-content {
-            border: 2px solid #b9e5a9;
+            border: 2px solid #3a95a6;
             border-radius: 0 8px 8px 8px;
             background-color: white;
             padding: 20px;
@@ -1916,7 +1925,7 @@
             width: 90%;
             max-width: 600px;
             margin: 20px auto;
-            border: 2px solid #134969;
+            border: 2px solid #b9e5a9;
             padding: 20px 30px;
             box-sizing: border-box;
             overflow: hidden;
@@ -1932,9 +1941,7 @@
         }
         /* Centraliza o parágrafo solto abaixo do slider */
         .slider-texto-container + p {
-            text-align: center !important;
             margin: 20px auto !important; /* para manter espaçamento */
-            max-width: 600px !important;   /* mesmo alinhamento visual do slider */
         }
         .slider-texto-wrapper {
             display: flex;
@@ -1957,7 +1964,7 @@
         }
 
         .titulo-texto {
-            color: #134969;
+            color: #92d678;    
             font-weight: bold;
             font-size: 24px;
             margin-bottom: 10px;
@@ -1986,7 +1993,7 @@
             background-color: transparent;
             border: none;
             font-size: 30px;
-            color: #134969;
+            color: #b9e5a9;
             cursor: pointer;
             padding: 10px;
             z-index: 10;
@@ -2033,7 +2040,7 @@
         }
 
         .dot-texto.ativo {
-            background-color: #134969;
+            background-color: #92d678;
         }
         .container-arcos {
             position: relative;
@@ -2052,7 +2059,7 @@
             left: -8px; /* vai um pouco pra esquerda */
             width: 100%;
             height: 100%;
-            border: 2px solid #3a95a6;
+            border: 2px solid #134969;
             border-radius: 20px;
             box-sizing: border-box;
             pointer-events: none;
@@ -2065,7 +2072,7 @@
             left: 8px;  /* vai um pouco pra direita */
             width: 100%;
             height: 100%;
-            border: 2px solid #3a95a6;
+            border: 2px solid #134969;
             border-radius: 20px;
             box-sizing: border-box;
             pointer-events: none;
@@ -2088,8 +2095,8 @@
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
-            background-color: #d6eff4;
-            border: 2px solid #3a95a6;
+            background-color: White;
+            border: 2px solid #92d678;
             border-radius: 10px;
             font-family: 'Roboto', sans-serif;
         }
@@ -2099,14 +2106,14 @@
             display: flex;
             justify-content: space-between; /* Agora título na esquerda e imagem na direita */
             align-items: center;
-            border-bottom: 2px solid #3a95a6;
+            border-bottom: 2px solid #92d678;
             padding-bottom: 5px;
         }
 
         .atividade-header h2 {
             font-family: 'Bebas Neue', cursive;
             font-weight: normal;
-            color: #3a95a6;
+            color: #92d678;
             font-size: 35px;
             margin: 0;
         }
@@ -2196,7 +2203,7 @@
                 gap: 15px;
             }
             .download-btn {
-                background-color:  #3a95a6;
+                background-color:  #b9e5a9;
                 color: white;
                 text-decoration: none;
                 font-size: 16px;
@@ -2363,7 +2370,7 @@
 
         .tabela-artigos th, 
         .tabela-artigos td {
-            border: 1px solid #ccc;
+            border: 1px solid #809dae;
             padding: 8px;
             text-align: center;
         }
@@ -2374,100 +2381,100 @@
         }
 
         .coluna-vermelha {
-            background-color: #809dae;
+            background-color: #134969;
         }
 
         .coluna-azul {
-            background-color: #809dae;
+            background-color: #134969;
         }
 
         .coluna-verde {
-            background-color: #809dae;
+            background-color: #134969;
         }
 
         .coluna-amarela {
-            background-color: #809dae;
+            background-color: #134969;
         }
         .modal-imagem {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
-.modal-imagem.ativo {
-  display: flex;
-}
+        .modal-imagem.ativo {
+        display: flex;
+        }
 
-.imagem-modal {
-  max-width: 90%;
-  max-height: 80%;
-  margin-bottom: 20px;
-}
+        .imagem-modal {
+        max-width: 90%;
+        max-height: 80%;
+        margin-bottom: 20px;
+        }
 
-.fechar {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-}
+        .fechar {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+        }
 
-.seta-modal {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-}
+        .seta-modal {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        }
 
-.seta-modal.esquerda {
-  left: 20px;
-}
+        .seta-modal.esquerda {
+        left: 20px;
+        }
 
-.seta-modal.direita {
-  right: 20px;
-}
+        .seta-modal.direita {
+        right: 20px;
+        }
 
-.indicador-contador {
-  color: white;
-  font-size: 18px;
-  margin-bottom: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 6px 12px;
-  border-radius: 15px;
-}
+        .indicador-contador {
+        color: white;
+        font-size: 18px;
+        margin-bottom: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 6px 12px;
+        border-radius: 15px;
+        }
 
-.indicador-pontos {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 20px;
-}
+        .indicador-pontos {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 20px;
+        }
 
-.indicador-pontos span {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255,255,255,0.3);
-  cursor: pointer;
-}
+        .indicador-pontos span {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255,255,255,0.3);
+        cursor: pointer;
+        }
 
-.indicador-pontos span.ativo {
-  background-color: white;
-}
+        .indicador-pontos span.ativo {
+        background-color: white;
+        }
     </style>
 </head>
 <body>
@@ -2487,7 +2494,6 @@
             <li><a href="#secao3">Tópico 3</a></li>
             <li><a href="#secao4">Tópico 4</a></li>
             <li><a href="#secao5">Tópico 5</a></li>
-            <li><a href="#secao6">Tópico 6</a></li>
             <li><a href="#download">Download</a></li>
             <li><a href="#conclusao">Conclusão</a></li>
             <li><a href="#referencias">Refs Bibliográficas</a></li>
@@ -2594,6 +2600,18 @@
                 <span class="text-italic"><strong>Fonte:</strong> USF, 2025.</span>
             </p>
         </section>
+        <br>
+        <p>
+            Esse exemplo nos mostra como uma simples apresentação pode ajudar a criar novas amizades e tornar a
+            adaptação mais fácil. Quando conseguimos nos expressar em um outro idioma, ganhamos mais confiança
+            para interagir em diversas situações do dia a dia. Praticar essas habilidades fará com que a comunicação
+            se torne cada vez mais natural, tornando o processo de adaptação muito mais simples.
+        </p>
+        <p>
+            Para ampliar ainda mais a sua compreensão, assista ao vídeo a seguir. Ele traz exemplos e explicações
+            que vão te ajudar a consolidar os aprendizados desta unidade.
+        </p>
+        <br>
         <!-- Modal de Imagem Ampliada -->
         <div id="modal-imagem" class="modal-imagem">
             <span class="fechar" onclick="fecharModal()">&times;</span>
@@ -2626,20 +2644,329 @@
     </section>
     <section class="secao1">
         <h1 class="titulo-verde">
-            1.1 NÚMEROS
+            1.1 SOLETRAÇÃO E O ALFABETO
+        </h1>
+        <div class="conteudo-secao">
+        <p>
+            O alfabeto é o conjunto de letras que usamos para formar palavras em uma língua. Soletrar é dizer o nome
+            de cada uma dessas letras em sequência, para mostrar como se escreve uma palavra. Isso é útil, por
+            exemplo, quando queremos esclarecer a grafia de um nome ou sobrenome que pode causar confusão,
+            ou quando precisamos garantir que a escrita está correta. Como a soletração depende diretamente do
+            conhecimento das letras de um determinado alfabeto, é importante compreender de onde vem o alfabeto
+            que usamos e como ele se organiza.
+        </p>
+        <p>
+            De acordo com o site Norma Culta (2025), o alfabeto da língua portuguesa deriva do sistema latino,
+            também conhecido como alfabeto romano, amplamente empregado na escrita em diversas línguas ao
+            redor do mundo. Ele é composto por vinte e seis letras, que podem ser apresentadas de duas maneiras
+            diferentes: maiúsculas e minúsculas.
+        </p>
+        <br>
+        <section class="slider-texto-container" data-slider-id="1">
+            <div class="slider-texto-wrapper">
+                <div class="slide-texto ativo">
+                    <h3 class="titulo-texto">Minúscula</h3>
+                    <p class="conteudo-texto">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
+                </div>
+                <div class="slide-texto">
+                    <h3 class="titulo-texto">Maiúscula</h3>
+                    <p class="conteudo-texto">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+                </div>
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores">
+                <span class="dot-texto" onclick="irParaSlideTexto(this, 0)"></span>
+                <span class="dot-texto" onclick="irParaSlideTexto(this, 1)"></span>
+            </div>
+        </section>
+        <br>
+        <p>
+            Tradicionalmente, o alfabeto português é composto por cinco vogais e dezoito consoantes. Porém, com a
+            incorporação das letras “k”, “y”, e “w”, houve mudanças na forma como essas categorias são organizadas.
+            A letra “k” é classificada como consoante, o “y” é uma vogal, e o “w” pode ser considerado vogal ou
+            consoante, dependendo de como é pronunciado na palavra. Por exemplo, em “Wilson”, o “w” possui som
+            de vogal “uilson”.
+        </p>
+        <br>
+        <section class="slider-texto-container" data-slider-id="2">
+            <div class="slider-texto-wrapper">
+                <div class="slide-texto ativo">
+                    <h3 class="titulo-texto">Vogais</h3>
+                    <p class="conteudo-texto">a e i o u y w</p>
+                </div>
+                <div class="slide-texto">
+                    <h3 class="titulo-texto">Consoantes</h3>
+                    <p class="conteudo-texto">b c d f g h j k l m n p q r s t v w x z</p>
+                </div>
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores">
+                <span class="dot-texto" onclick="irParaSlideTexto(this, 0)"></span>
+                <span class="dot-texto" onclick="irParaSlideTexto(this, 1)"></span>
+            </div>
+        </section>
+        <br>
+        <p>
+            A seguir, você pode verificar um quadro contendo as letras do alfabeto e sua respectiva pronúncia em
+            português, facilitando o aprendizado e a familiarização com os sons da língua.
+        </p>
+        <h2 class="titulo-quadrov"><span class="text-greenv">Quadro 1.</span> Letras e seus sons em português</h2>
+        <table
+            style="width: 90%; max-width: 600px; margin: 30px auto; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 14px; background-color: #fff; border: 1px solid #ccc;">
+            <thead>
+                <tr style="background-color: #c2e4bc; color: #000;">
+                    <th style="padding: 8px; border: 1px solid #ccc;">Letra</th>
+                    <th style="padding: 8px; border: 1px solid #ccc;">Som</th>
+                    <th style="padding: 8px; border: 1px solid #ccc;">Letra</th>
+                    <th style="padding: 8px; border: 1px solid #ccc;">Som</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">a</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">á</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">n</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">êne</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">b</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">bê</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">o</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">ó</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">c</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">cê</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">p</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">pê</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">d</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">dê</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">q</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">quê</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">e</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">é</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">r</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">érre</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">f</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">éfe</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">s</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">ésse</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">g</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">gê</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">t</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">tê</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">h</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">agá</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">u</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">u</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">i</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">i</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">v</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">vê</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">j</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">jóta</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">w</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">dáblio</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">k</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">cá</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">x</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">xis</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">l</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">éle</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">y</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">ípsilon</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; border: 1px solid #ccc;">m</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">ême</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">z</td>
+                    <td style="text-align: center; border: 1px solid #ccc;">zê</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="fonte-imagem">
+            <span class="text-italic"><strong>Fonte:</strong> Elaborado pelo autor.</span>
+        </p>
+        <br>
+        <p>
+            Desde o Acordo Ortográfico de 2009 (tornado obrigatório em 2016), as letras “K”, “W” e “Y” passaram a
+            fazer parte oficial do alfabeto português. Suas inclusões refletem o caráter global da língua portuguesa
+            ao reforçar as suas capacidades de incorporar palavras e influências de outras culturas. Dessa forma,
+            o alfabeto passou de 23 para 26 letras e são importantes para preservar a grafia de nomes de origem
+            estrangeira e siglas e, também, facilitar a adaptação de novos termos oriundos de outras culturas. Podemos
+            evidenciar, no nosso dia a dia, as novas letras em palavras como “watt” e “Yamaha”. A seguir temos alguns
+            exemplos da utilização das letras “K”, “W” e “Y”.
+        </p>
+        <br>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    NOMES PRÓPRIOS ESTRANGEIROS DE PESSOAS E SEUS DERIVADOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        <strong>▸</strong> Darwin e darwinismo;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Kant e kantismo;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Newton e newtoniano;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Taylor e taylorista;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Shakespeare e shakesperiano.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    NOMES PRÓPRIOS ESTRANGEIROS DE LUGARES E SEUS DERIVADOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        <strong>▸</strong> Malawi e malawiano;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Kuwait e kuwaitiano;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Yorkshire e yorkshiriano;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Washington e washingtoniano.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    SIGLAS, SÍMBOLOS, UNIDADES DE MEDIDA E UNIDADES MONETÁRIAS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        <strong>▸</strong> km (quilômetro);
+                    </p>
+                    <p>
+                        <strong>▸</strong> kg (quilograma);
+                    </p>
+                    <p>
+                        <strong>▸</strong> W (Watt);
+                    </p>
+                    <p>
+                        <strong>▸</strong> K (potássio);
+                    </p>
+                    <p>
+                        <strong>▸</strong> yd (jarda).
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Quarto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerb">
+                    ESTRANGEIRISMOS DE USO FREQUENTE
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentb">
+                    <p>
+                        <strong>▸</strong> download
+                    </p>
+                    <p>
+                        <strong>▸</strong> software;
+                    </p>
+                    <p>
+                        <strong>▸</strong> show;
+                    </p>
+                    <p>
+                        <strong>▸</strong> windsurf;
+                    </p>
+                    <p>
+                        <strong>▸</strong> web;
+                    </p>
+                    <p>
+                        <strong>▸</strong> playground;
+                    </p>
+                    <p>
+                        <strong>▸</strong> playboy;
+                    </p>
+                    <p>
+                        <strong>▸</strong> Whisky;
+                    </p>
+                    <p>
+                        <strong>▸</strong> kit.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <p class="fonte-imagem">
+            <span class="text-italic"><strong>Fonte:</strong> Adaptado de https://www.normaculta.com.br/alfabeto/. Acesso em: 04
+                abr. 2025.</span>
+        </p>
+        <br>
+        <p>
+            O “ç” (cê-cedilha) não é considerado uma letra do alfabeto, mas sim a junção da letra “c” com um sinal
+            diacrítico (a cedilha), tornando-se assim uma variante da letra “c”. Um sinal diacrítico é um pequeno
+            símbolo ou marca gráfica adicionada para modificar ou especificar sua pronúncia ou função dentro de
+            uma palavra. Ou seja, “a cobrinha” abaixo da letra “c” tem como função atribuir um novo valor fonético a
+            essa letra, alterando a sua pronúncia habitual.
+        </p>
+        <p>
+            Na língua portuguesa temos algumas regras para a utilização do “ç”. É exclusivamente usada antes das
+            vogais “a”, “o” e “u” para indicar o som de /s/ como em “caça” ou “açougue”. Não utilizamos “ç” no início
+            das palavras e não usamos o cedilha antes das vogais “i” e “e”, nesses casos usamos apenas o “c”. O
+            grupo silábico fica ça, ce, ci, ço, çu (sendo lido como sa, se, si, so, su).
+        </p>
+        <h1 class="titulo-verde">
+            1.2 NÚMEROS
         </h1>
         <p>
             Os números estão presentes em diversas situações do nosso cotidiano. Como você pode observar na
-            Figura 01, eles são utilizados, por exemplo, para indicar um número de telefone. Além disso, usamos os
+            Figura 1, eles são utilizados, por exemplo, para indicar um número de telefone. Além disso, usamos os
             números para anotar um endereço, ao verificar documentos como a carteira de identidade, a carteira de
             motorista ou o passaporte, ao ficar numa fila de espera em um banco e até mesmo ao pedir uma pizza
-            (ao escolher ½ calabresa e ½ mussarela).
+            (ao escolher 1⁄2 calabresa e 1⁄2 mussarela).
         </p>
         <p>
             Na língua portuguesa, os números pertencem à classe dos numerais, e eles são palavras variáveis que
             indicam um número exato ou a posição que tal coisa ocupa numa série. Os numerais podem ser classificados
             em quatro categorias principais, como vemos a seguir:
         </p>
+        <br>
         <h2 class="titulo-quadrov"><span class="text-greenv">Tabela 1.</span> Tipos de Numerais</h2>
         <div class="tabela-responsiva">
         <table style="width: 50%; min-width: 600px; border-collapse: collapse; text-align: center;">
@@ -2972,7 +3299,9 @@
             <span class="text-italic"><strong>Fonte:</strong> Adaptada de Toda a Matéria. Disponível em:
                 https://www.todamateria.com.br/. Acesso em: 03 abr. 2025.</span>
         </p>
+        </div>
     </div>
+
     <br><br><br>
     </section>
     <section class="secao2" id="secao2">
@@ -2981,102 +3310,7 @@
         
         <div class="faixa-verde">
             <h1 class="titulo-secao">
-                2. INFORMAÇÕES GERAIS
-            </h1>
-        </div>
-        <div class="conteudo-secao">
-        <p>
-            Ao ingressar na faculdade, seja como estudante estrangeiro ou não, é importante conhecer algumas
-            informações básicas para facilitar a adaptação ao novo ambiente acadêmico e a cultura universitária.
-            Essas informações ajudam na sua ambientação, podem evitar dificuldades iniciais e a aproveitar melhor
-            os recursos disponíveis.
-        </p>
-        <p>
-            Podemos destacar alguns aspectos importantes que podem auxiliar nesse processo.
-        </p>
-        <!-- Acordeons -->
-        <div class="acordeon-container">
-            <!-- Primeiro acordeon -->
-            <div class="acordeon">
-                <div class="acordeon-header">
-                    INFRAESTRUTURA
-                    <i class="bx bx-chevron-down acordeon-icon"></i>
-                </div>
-                <div class="acordeon-content">
-                    <p>
-                        Conhecer a localização de espaços essenciais da universidade, como biblioteca,
-                        banheiros, refeitórios e salas de estudo.
-                    </p>
-                </div>
-            </div>
-        
-            <!-- Segundo acordeon -->
-            <div class="acordeon">
-                <div class="acordeon-header">
-                    NORMAS E REGULAMENTOS
-                    <i class="bx bx-chevron-down acordeon-icon"></i>
-                </div>
-                <div class="acordeon-content">
-                    <p>
-                        Compreender as principais regras da instituição para evitar problemas com prazos,
-                        penalidades e procedimentos administrativos.
-                    </p>
-                </div>
-            </div>
-        
-            <!-- Terceiro acordeon -->
-            <div class="acordeon">
-                <div class="acordeon-header">
-                    CULTURA E VIDA SOCIAL
-                    <i class="bx bx-chevron-down acordeon-icon"></i>
-                </div>
-                <div class="acordeon-content">
-                    <p>
-                        Estar ciente de festividades, costumes locais e eventos acadêmicos que promovem a
-                        integração entre os estudantes.
-                    </p>
-                </div>
-            </div>
-        
-            <!-- Quarto acordeon -->
-            <div class="acordeon">
-                <div class="acordeon-header">
-                    REDE DE APOIO
-                    <i class="bx bx-chevron-down acordeon-icon"></i>
-                </div>
-                <div class="acordeon-content">
-                    <p>
-                        Explorar os serviços oferecidos pela faculdade, como orientação estudantil, grupos
-                        acadêmicos e programas de suporte.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Quinto acordeon -->
-            <div class="acordeon">
-                <div class="acordeon-header">
-                    SERVIÇOS EXTERNOS
-                    <i class="bx bx-chevron-down acordeon-icon"></i>
-                </div>
-                <div class="acordeon-content">
-                    <p>
-                        Obter informações sobre transporte público, segurança, atendimento médico e outras
-                        facilidades da cidade e região.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <p>
-            Esses aspectos podem contribuir para uma experiência acadêmica mais tranquila e enriquecedora.
-        </p>
-    </div>
-    </section>
-    <section class="secao3" id="secao3">
-        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745524189/vm6embgebhgp2mhck5qn.png"
-            alt="Imagem topo da seção" class="imagem-topo">
-        <div class="faixa-verde">
-            <h1 class="titulo-secao">
-                3. PEDIR INFORMAÇÕES
+                2. PEDIR INFORMAÇÕES
             </h1>
         </div>
         <div class="conteudo-secao">
@@ -3179,7 +3413,8 @@
             forma mais visual e contextualizada. Vamos assistir?
         </p>
         <!-- Bloco de vídeo com imagem de fundo -->
-        <div class="video-thumbnail" data-video="https://player-vz-04af0c61-9a0.tv.pandavideo.com.br/embed/?v=7df0f567-edba-425f-b97c-bd8d6cdc8687&preload=false">
+        <div class="video-thumbnail"
+            data-video="https://player-vz-04af0c61-9a0.tv.pandavideo.com.br/embed/?v=7df0f567-edba-425f-b97c-bd8d6cdc8687&preload=false">
             <div class="video-bg"></div>
             <div class="play-icon">&#9658;</div>
         </div>
@@ -3193,237 +3428,12 @@
         </div>
     </div>
     </section>
-    <section class="secao4" id="secao4">
-        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745601513/wglkd0x3l2uasackwlxn.png"
+    <section class="secao3" id="secao3">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745524189/vm6embgebhgp2mhck5qn.png"
             alt="Imagem topo da seção" class="imagem-topo">
         <div class="faixa-verde">
             <h1 class="titulo-secao">
-                4. SOLETRAÇÃO E O ALFABETO
-            </h1>
-        </div>
-        <div class="conteudo-secao">
-        <p>
-            Durante a conversa entre Sebastian e Maria José, houve um momento em que o estudante precisou
-            soletrar seu sobrenome. Geralmente soletramos uma palavra quando não entendemos direito como ela é
-            escrita ou quando não ouvimos direito seu significado. Quando estamos soletrando um sobrenome, como
-            mostrado no diálogo anterior “M-ü-l-l-e-r”, utilizamos o alfabeto para mostrar como a palavra dita é escrita.
-            O alfabeto é um conjunto de caracteres, chamados letras, que quando juntamos formam as palavras.
-        </p>
-        <p>
-            De acordo com o site Norma Culta (2025), o alfabeto da língua portuguesa deriva do sistema latino,
-            também conhecido como alfabeto romano, amplamente empregado na escrita em diversas línguas ao
-            redor do mundo. Ele é composto por vinte e seis letras, que podem ser apresentadas de duas maneiras
-            diferentes: maiúsculas e minúsculas.
-        </p>
-        <section class="slider-texto-container" data-slider-id="1">
-            <div class="slider-texto-wrapper">
-                <div class="slide-texto ativo">
-                    <h3 class="titulo-texto">Minúscula</h3>
-                    <p class="conteudo-texto">a b c d e f g h i j k l m n o p q r s t u v w x y z</p>
-                </div>
-                <div class="slide-texto">
-                    <h3 class="titulo-texto">Maiúscula</h3>
-                    <p class="conteudo-texto">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
-                </div>
-            </div>
-        
-            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
-            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
-        
-            <div class="slider-texto-indicadores">
-                <span class="dot-texto" onclick="irParaSlideTexto(this, 0)"></span>
-                <span class="dot-texto" onclick="irParaSlideTexto(this, 1)"></span>
-            </div>
-        </section>
-        <p>
-            Tradicionalmente, o alfabeto português é composto por cinco vogais e dezoito consoantes. Porém, com a
-            incorporação das letras “k”, “y”, e “w”, houve mudanças na forma como essas categorias são organizadas.
-            A letra “k” é classificada como consoante, o “y” é uma vogal, e o “w” pode ser considerado vogal ou
-            consoante, dependendo de como é pronunciado na palavra. Por exemplo, em “Wilson”, o “w” possui som
-            de vogal “uilson”.
-        </p>
-        <section class="slider-texto-container" data-slider-id="2">
-            <div class="slider-texto-wrapper">
-                <div class="slide-texto ativo">
-                    <h3 class="titulo-texto">Vogais</h3>
-                    <p class="conteudo-texto">a e i o u y w</p>
-                </div>
-                <div class="slide-texto">
-                    <h3 class="titulo-texto">Consoantes</h3>
-                    <p class="conteudo-texto">b c d f g h j k l m n p q r s t v w x z</p>
-                </div>
-            </div>
-        
-            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
-            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
-        
-            <div class="slider-texto-indicadores">
-                <span class="dot-texto" onclick="irParaSlideTexto(this, 0)"></span>
-                <span class="dot-texto" onclick="irParaSlideTexto(this, 1)"></span>
-            </div>
-        </section>
-        <p>
-            A seguir, você pode verificar um quadro contendo as letras do alfabeto e sua respectiva pronúncia em
-            português, facilitando o aprendizado e a familiarização com os sons da língua.
-        </p>
-        <h2 class="titulo-quadrov"><span class="text-greenv">Quadro 1.</span> Letras e seus sons em português</h2>
-        <div class="quadroimg">
-            <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745609709/v6tzo7tgqawod87c3q5g.png"
-                alt="Imagem vertical" onclick="openModal(this)">
-        </div>
-        <!-- Modal para exibir a imagem ampliada -->
-        <div id="imageModal" class="modal" onclick="closeModal()">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="modalImg">
-        </div>
-        <p class="fonte-imagem">
-            <span class="text-italic"><strong>Fonte:</strong> Elaborado pelo autor.</span>
-        </p>
-        <p>
-            Desde o Acordo Ortográfico de 2009 (tornado obrigatório em 2016), as letras “K”, “W” e “Y” passaram a
-            fazer parte oficial do alfabeto português. Suas inclusões refletem o caráter global da língua portuguesa
-            ao reforçar as suas capacidades de incorporar palavras e influências de outras culturas. Dessa forma,
-            o alfabeto passou de 23 para 26 letras e são importantes para preservar a grafia de nomes de origem
-            estrangeira e siglas e, também, facilitar a adaptação de novos termos oriundos de outras culturas. Podemos
-            evidenciar, no nosso dia a dia, as novas letras em palavras como “watt” e “Yamaha”. A seguir temos alguns
-            exemplos da utilização das letras “K”, “W” e “Y”.
-
-        </p>
-        <!-- Acordeons -->
-        <div class="acordeon-container">
-            <!-- Primeiro acordeon -->
-            <div class="acordeon">
-                <div class="acordeon-headerb">
-                    NOMES PRÓPRIOS ESTRANGEIROS DE PESSOAS E SEUS DERIVADOS
-                    <i class="bx bx-chevron-down acordeon-icon"></i>
-                </div>
-                <div class="acordeon-contentb">
-                    <p>
-                        <strong>▸</strong> Darwin e darwinismo;
-                    </p>
-                    <p>
-                        <strong>▸</strong> Kant e kantismo;
-                    </p>
-                    <p>
-                        <strong>▸</strong> Newton e newtoniano;
-                    </p>
-                    <p>
-                        <strong>▸</strong> Taylor e taylorista;
-                    </p>
-                    <p>
-                        <strong>▸</strong> Shakespeare e shakesperiano.
-                    </p>
-                </div>
-            </div>
-        
-            <!-- Segundo acordeon -->
-            <div class="acordeon">
-                <div class="acordeon-headerb">
-                    NOMES PRÓPRIOS ESTRANGEIROS DE LUGARES E SEUS DERIVADOS
-                    <i class="bx bx-chevron-down acordeon-icon"></i>
-                </div>
-                <div class="acordeon-contentb">
-                    <p>
-                        <strong>▸</strong> Malawi e malawiano;
-                    </p>
-                    <p>
-                        <strong>▸</strong> Kuwait e kuwaitiano;
-                    </p>
-                    <p>
-                        <strong>▸</strong> Yorkshire e yorkshiriano;
-                    </p>
-                    <p>
-                        <strong>▸</strong> Washington e washingtoniano.
-                    </p>
-                </div>
-            </div>
-        
-            <!-- Terceiro acordeon -->
-            <div class="acordeon">
-                <div class="acordeon-headerb">
-                    SIGLAS, SÍMBOLOS, UNIDADES DE MEDIDA E UNIDADES MONETÁRIAS
-                    <i class="bx bx-chevron-down acordeon-icon"></i>
-                </div>
-                <div class="acordeon-contentb">
-                    <p>
-                        <strong>▸</strong> km (quilômetro);
-                    </p>
-                    <p>
-                        <strong>▸</strong> kg (quilograma);
-                    </p>
-                    <p>
-                        <strong>▸</strong> W (Watt);
-                    </p>
-                    <p>
-                        <strong>▸</strong> K (potássio);
-                    </p>
-                    <p>
-                        <strong>▸</strong> yd (jarda).
-                    </p>
-                </div>
-            </div>
-        
-            <!-- Quarto acordeon -->
-            <div class="acordeon">
-                <div class="acordeon-headerb">
-                    ESTRANGEIRISMOS DE USO FREQUENTE
-                    <i class="bx bx-chevron-down acordeon-icon"></i>
-                </div>
-                <div class="acordeon-contentb">
-                    <p>
-                        <strong>▸</strong> download
-                    </p>
-                    <p>
-                        <strong>▸</strong> software;
-                    </p>
-                    <p>
-                        <strong>▸</strong> show;
-                    </p>
-                    <p>
-                        <strong>▸</strong> windsurf;
-                    </p>
-                    <p>
-                        <strong>▸</strong> web;
-                    </p>
-                    <p>
-                        <strong>▸</strong> playground;
-                    </p>
-                    <p>
-                        <strong>▸</strong> playboy;
-                    </p>
-                    <p>
-                        <strong>▸</strong> Whisky;
-                    </p>
-                    <p>
-                        <strong>▸</strong> kit.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <p class="fonte-imagem">
-            <span class="text-italic"><strong>Fonte:</strong> Adaptado de https://www.normaculta.com.br/alfabeto/. Acesso em: 04 abr. 2025.</span>
-        </p>
-        <p>
-            O “ç” (cê-cedilha) não é considerado uma letra do alfabeto, mas sim a junção da letra “c” com um sinal
-            diacrítico (a cedilha), tornando-se assim uma variante da letra “c”. Um sinal diacrítico é um pequeno
-            símbolo ou marca gráfica adicionada para modificar ou especificar sua pronúncia ou função dentro de
-            uma palavra. Ou seja, “a cobrinha” abaixo da letra “c” tem como função atribuir um novo valor fonético a
-            essa letra, alterando a sua pronúncia habitual.
-        </p>
-        <p>
-            Na língua portuguesa temos algumas regras para a utilização do “ç”. É exclusivamente usada antes das
-            vogais “a”, “o” e “u” para indicar o som de /s/ como em “caça” ou “açougue”. Não utilizamos “ç” no início
-            das palavras e não usamos o cedilha antes das vogais “i” e “e”, nesses casos usamos apenas o “c”. O
-            grupo silábico fica ça, ce, ci, ço, çu (sendo lido como sa, se, si, so, su).
-        </p>
-    </div>
-    </section>
-    <section class="secao5" id="secao5">
-        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1744848303/g7vh0r0sje52zd19k9ww.png"
-            alt="Imagem topo da seção" class="imagem-topo">
-        <div class="faixa-verde">
-            <h1 class="titulo-secao">
-                5. ADVÉRBIOS
+                3. ADVÉRBIOS
             </h1>
         </div>
         <div class="conteudo-secao">
@@ -3532,7 +3542,7 @@
                     </p>
                 </div>
             </div>
-
+        
             <!-- Quinto acordeon -->
             <div class="acordeon">
                 <div class="acordeon-headerc">
@@ -3552,7 +3562,7 @@
                     </p>
                 </div>
             </div>
-
+        
             <!-- Quinto acordeon -->
             <div class="acordeon">
                 <div class="acordeon-headerc">
@@ -3572,7 +3582,7 @@
                     </p>
                 </div>
             </div>
-
+        
             <!-- Quinto acordeon -->
             <div class="acordeon">
                 <div class="acordeon-headerc">
@@ -3592,7 +3602,7 @@
                     </p>
                 </div>
             </div>
-
+        
             <!-- Quinto acordeon -->
             <div class="acordeon">
                 <div class="acordeon-headerc">
@@ -3611,7 +3621,7 @@
                     </p>
                 </div>
             </div>
-
+        
             <!-- Quinto acordeon -->
             <div class="acordeon">
                 <div class="acordeon-headerc">
@@ -3630,7 +3640,7 @@
                     </p>
                 </div>
             </div>
-
+        
             <!-- Quinto acordeon -->
             <div class="acordeon">
                 <div class="acordeon-headerc">
@@ -3649,7 +3659,7 @@
                     </p>
                 </div>
             </div>
-
+        
             <!-- Quinto acordeon -->
             <div class="acordeon">
                 <div class="acordeon-headerc">
@@ -3670,17 +3680,17 @@
             </div>
         </div>
         <p class="fonte-imagem">
-            <span class="text-italic"><strong>Fonte:</strong> Adaptado de https://www.todamateria.com.br/classificacao-dos-adverbios/. Acesso em: 04 abr. 2025.</span>
+            <span class="text-italic"><strong>Fonte:</strong> Adaptado de
+                https://www.todamateria.com.br/classificacao-dos-adverbios/. Acesso em: 04 abr. 2025.</span>
         </p>
     </div>
     </section>
-    <section class="secao6" id="secao6">
-        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745482633/lzh6tivsuwgnneylpzvp.png"
+    <section class="secao4" id="secao4">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745601513/wglkd0x3l2uasackwlxn.png"
             alt="Imagem topo da seção" class="imagem-topo">
-        
         <div class="faixa-verde">
             <h1 class="titulo-secao">
-                6. ARTIGO
+                4. ARTIGO
             </h1>
         </div>
         <div class="conteudo-secao">
@@ -3688,6 +3698,7 @@
             Para distinguir se estamos falando de algo específico ou algo em geral utilizamos pequenas palavras
             conhecidas como artigos. Os artigos sempre acompanham os substantivos, como por exemplo:
         </p>
+        <br>
         <div class="container-arcos">
             <div class="arco arco1"></div>
             <div class="arco arco2"></div>
@@ -3697,10 +3708,11 @@
                 <p>“Eu comprei <strong>um</strong> sapato.” (qualquer sapato, sem especificar)</p>
             </div>
         </div>
+        <br>
         <p>
             Os artigos podem ser definidos e indefinidos. Vamos entender melhor como isso funciona.
         </p>
-    
+        
         <section class="tabs-section" id="grupo-tabs-b">
             <div class="tabs-header">
                 <button class="tab-btnb" data-target="artigodef">ARTIGO DEFINIDO</button>
@@ -3797,8 +3809,9 @@
             <p class="fonte-imagem">
                 <span class="text-italic">
                     Fonte: Elaborado pelo autor.
-                </span></p>
-           </div>
+                </span>
+            </p>
+        
         <p>
             A principal diferença entre os artigos definidos e indefinidos está no nível de especificidade. Quando
             utilizamos artigos definidos, estamos nos referindo a algo que já é conhecido no contexto da conversa ou
@@ -3809,14 +3822,112 @@
         </p>
         <p>
             Por outro lado, os artigos indefinidos generalizam, sem especificar. Isso pode ser visto nas expressões
-            <strong>um gato, uma bolsa, uns amigos</strong> e <strong>umas ideias</strong>, em que não há uma determinação exata sobre quais
+            <strong>um gato, uma bolsa, uns amigos</strong> e <strong>umas ideias</strong>, em que não há uma determinação exata
+            sobre quais
             são esses objetos ou pessoas.
         </p>
-    
+        </div>
+    </div>
+    </section>
+    <section class="secao5" id="secao5">
+        <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1744848303/g7vh0r0sje52zd19k9ww.png"
+            alt="Imagem topo da seção" class="imagem-topo">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                5. INFORMAÇÕES GERAIS
+            </h1>
+        </div>
+        <div class="conteudo-secao">
+        <p>
+            Ao ingressar na faculdade, seja como estudante estrangeiro ou não, é importante conhecer algumas
+            informações básicas para facilitar a adaptação ao novo ambiente acadêmico e a cultura universitária.
+            Essas informações ajudam na sua ambientação, podem evitar dificuldades iniciais e a aproveitar melhor
+            os recursos disponíveis.
+        </p>
+        <p>
+            Podemos destacar alguns aspectos importantes que podem auxiliar nesse processo.
+        </p>
+        <br>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-header">
+                    INFRAESTRUTURA
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-content">
+                    <p>
+                        Conhecer a localização de espaços essenciais da universidade, como biblioteca,
+                        banheiros, refeitórios e salas de estudo.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Segundo acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-header">
+                    NORMAS E REGULAMENTOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-content">
+                    <p>
+                        Compreender as principais regras da instituição para evitar problemas com prazos,
+                        penalidades e procedimentos administrativos.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Terceiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-header">
+                    CULTURA E VIDA SOCIAL
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-content">
+                    <p>
+                        Estar ciente de festividades, costumes locais e eventos acadêmicos que promovem a
+                        integração entre os estudantes.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Quarto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-header">
+                    REDE DE APOIO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-content">
+                    <p>
+                        Explorar os serviços oferecidos pela faculdade, como orientação estudantil, grupos
+                        acadêmicos e programas de suporte.
+                    </p>
+                </div>
+            </div>
+        
+            <!-- Quinto acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-header">
+                    SERVIÇOS EXTERNOS
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-content">
+                    <p>
+                        Obter informações sobre transporte público, segurança, atendimento médico e outras
+                        facilidades da cidade e região.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>
+            Esses aspectos podem contribuir para uma experiência acadêmica mais tranquila e enriquecedora.
+        </p>
         <section class="atividade-section">
             <div class="atividade-header">
                 <h2>AGORA É SUA VEZ!</h2>
-                <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745869736/jyzm19p9bgggekjdrgnz.png"
+                <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1744848303/g7vh0r0sje52zd19k9ww.png"
                     alt="Ícone título">
             </div>
         
@@ -3836,13 +3947,14 @@
             <div id="iframe-container" style="display: none; margin-top: 20px; position: relative;">
                 <!-- Botão de fechar -->
                 <button onclick="fecharQuizz()" class="btn-fechar-quizz">&times;</button>
-            
+        
                 <!-- Iframe do Genially -->
                 <iframe id="quizz-iframe" src="" width="100%" height="500px"
                     style="border: 2px solid #3a95a6; border-radius: 10px;"></iframe>
             </div>
-        </div>
+            </div>
         </section>
+    </div>
     </section>
     <section class="conclusao" id="conclusao">
         <img src="https://res.cloudinary.com/di4ria1pf/image/upload/v1745524189/vm6embgebhgp2mhck5qn.png"
